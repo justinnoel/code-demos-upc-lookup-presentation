@@ -1,0 +1,22 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import SlideHeader from "../components/SlideHeader.astro";
+import Slide from "../components/Slide.astro";
+
+const { content } = Astro.props;
+const { title, description, publishDate, heroImage, permalink, alt } = content;
+---
+
+<html lang={content.lang || "en"}>
+	<head>
+		<BaseHead {title} descript={description} permalink{permalink} />
+		<link rel="stylesheet" href="/presentation.css" />
+	</head>
+
+	<body>
+		<SlideHeader />
+		<Slide {title} {heroImage} {publishDate} {alt}>
+			<slot />
+		</Slide>
+	</body>
+</html>
