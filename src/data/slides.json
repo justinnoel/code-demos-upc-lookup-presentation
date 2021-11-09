@@ -1,0 +1,34 @@
+[
+	{
+		"id": 1,
+		"title": "About Me",
+		"previewText": "Who is this Justin Noel guy?",
+		"linkText": "about-me",
+		"description": "This is about me!",
+		"content": "about-me.md"
+	},
+	{
+		"id": 2,
+		"title": "What We're Going To Build",
+		"previewText": "Today, we'll demonstrate building a simple UPC lookup service that will be based off a real service created for the Community Garden Kitchen of McKinney, TX.",
+		"linkText": "what-we-are-building",
+		"description": "This is what were building!",
+		"content": "about-me.md"
+	},
+	{
+		"id": 3,
+		"title": "Astro",
+		"previewText": "Astro is a static site generator (SSG) that generates the HTML, JavaScript, and CSS.",
+		"linkText": "astro",
+		"description": "This is astro",
+		"content": "about-me.md"
+	},
+	{
+		"id": 4,
+		"title": "Cloudflare",
+		"previewText": "Cloudflare also has a suite of tools for enterprises and developers to build robust, automatically scaled, and low cost \"serverless\" applications.",
+		"linkText": "cloudflare",
+		"description": "This is cloudflare",
+		"content": "about-me.md"
+	}
+]

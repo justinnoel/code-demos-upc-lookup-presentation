@@ -1,0 +1,135 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import SlideHeader from "../../components/SlideHeader.astro";
+
+const title = "Cloudflare";
+const description =
+	"Cloudflare's suite of serveless features make developing fast, highly performant apps a breeze.";
+const permalink =
+	"https://slides-astro-cloudflare-upc.codedemos.dev/cloudflare";
+---
+
+<html lang="en">
+	<head>
+		<BaseHead {title} {description} {permalink} />
+	</head>
+
+	<body class=" text-gray-700 mx-auto max-w-6xl">
+		<SlideHeader />
+		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
+			<!-- <h3 class="text-4xl">Astre</h3> -->
+			<p class="mt-8 text-2xl">
+				<a
+					class="underline hover:text-yellow-700"
+					href="https://cloudflare.com"
+					target="_blank"
+					rel="noopener noreferrer">Cloudflare</a> is widely known as a CDN and security
+				service for the internet. They protect millions of sites against DDoS and
+				other attack vectors.
+			</p>
+
+			<p class="mt-8 text-2xl">
+				Cloudflare also has a suite of tools for enterprises and developers to
+				build robust, automatically scaled, and low cost "serverless"
+				applications.
+			</p>
+
+			<p class="mt-8 text-2xl">
+				We'll be using the following Cloudflare services:
+			</p>
+
+			<h3 id="pages" class="mt-8 text-4xl">Pages</h3>
+			<p class="mt-8 text-2xl">
+				<a
+					class="underline hover:text-yellow-700"
+					href="https://pages.cloudflare.com"
+					target="_blank"
+					rel="noopener noreferrer">Pages</a> is currently a hosting service for
+				static sites.
+			</p>
+
+			<p class="mt-8 text-2xl">
+				Using GitHub integration (others Coming Soon<sup>TM</sup>), any changes
+				made on the "main" branch are automatically pushed to production.
+				Changes on other branches automatically get a "preview url".
+			</p>
+
+			<p class="mt-8 text-2xl">
+				All of the published sites are cached across Cloudflare's entire network
+				of 250+ points of presence across the global. If your visitor is in
+				Mumbai, India or Dallas, USA they will be served the content from the
+				POP closest to them with virtually no latency.
+			</p>
+
+			<p class="mt-8 text-2xl">
+				There are rumors of adding "API" functionality within the Pages platform
+				as well. For now, see <a href="#workers">Workers</a>.
+			</p>
+
+			<h3 id="workers" class="mt-8 text-4xl">Workers</h3>
+			<p class="mt-8 text-2xl">
+				Unlike most "serveless functions" available from other providers, <a
+					class="underline hover:text-yellow-700"
+					href="https://workers.cloudflare.com/"
+					target="_blank"
+					rel="noopener noreferrer">Workers</a> do not use nodejs. Instead, Cloudflare
+				used v8 Isolates. These are effectively instances of the Chrome JavaScript
+				engine running in the cloud. Because of this, they have extremely low cold
+				start times.
+			</p>
+
+			<p class="mt-8 text-2xl">
+				In fact, the cold start times are so low that Cloudflare managed to make
+				them appear to be 0ms. They did this by starting instance during the SSL
+				handshake.
+			</p>
+
+			<p class="mt-8 text-2xl">
+				By the time the handshake is complete, the instance is already up and
+				ready to receive the request.
+			</p>
+
+			<p class="mt-8 text-2xl">
+				Just like Pages, Workers are globally distributed. Code that runs
+				without accessing an external service or API will respond nearly
+				instanly anywhere in the world.
+			</p>
+
+			<h3 id="workers-kv" class="mt-8 text-4xl">Workers KV</h3>
+			<p class="mt-8 text-2xl">
+				<a
+					class="underline hover:text-yellow-700"
+					href="https://www.cloudflare.com/products/workers-kv/"
+					target="_blank"
+					rel="noopener noreferrer">Workers KV</a> is an extremely low latency, key-value
+				storage service. You put data in and fetch data out.
+			</p>
+
+			<p class="mt-8 text-2xl">
+				It's basically like a schemaless, JSON database.
+			</p>
+
+			<p class="mt-8 text-2xl">
+				As with Pages and Workers, they KV data is globally distributed and
+				accessible at the POP closest to your visitor.
+			</p>
+
+			<p class="mt-8 text-2xl">
+				It's important to note that KV is "eventually consistent". If a user in
+				Chicago triggers a Worker to update a KV, the change will be
+				instantaneous in that POP for all subsequent requests. However, someone
+				in Europe may not see those changes immediately. In general, global
+				synchronization is completed in less than 60 seconds.
+			</p>
+
+			<p class="mt-8 text-2xl">
+				If you need guaranteed consistency with transaction capability, consider
+				using Cloudflare's <a
+					class="underline hover:text-yellow-700"
+					href="https://developers.cloudflare.com/workers/learning/using-durable-objects"
+					target="_blank"
+					rel="noopener noreferrer">Durable Objects</a> which is still in beta.
+			</p>
+		</main>
+	</body>
+</html>

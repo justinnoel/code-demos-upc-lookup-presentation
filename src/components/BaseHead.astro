@@ -12,6 +12,7 @@ const { description, permalink, title } = Astro.props as Props;
 <meta charSet="utf-8" />
 <meta name="viewport" content="width=device-width" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="stylesheet" href={Astro.resolve("../assets/global.css")} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>

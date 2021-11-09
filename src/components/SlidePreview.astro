@@ -1,53 +1,19 @@
 ---
+// TODO: Why doesn't this import properly?
+// import { SlideType } from "../presentation";
 export interface Props {
-	slide: any;
+	slide: SlideType;
 }
 
-const { slide } = Astro.props;
+const { slide } = Astro.props as Props;
+const { title, previewText, linkText } = slide;
 ---
 
-<article class="slide-preview">
-	<header>
-		<a href={slide.url}><h1 class="title">{slide.title}</h1></a>
-	</header>
-	<p>{slide.description}</p>
-	<a href={slide.url}>Read more</a>
+<article class="mt-8">
+	<h3 class="text-2xl text-gray-700 underline ">
+		<a href={`/slides/${linkText}`} class="hover:text-yellow-700">{title}</a>
+	</h3>
+	<p class="pl-4 sm:pl-8 my-2 text-xl">{previewText}</p>
+	<a href={`/slides/${linkText}`} class="pl-4 sm:pl-8 text-yellow-700"
+		>Read more</a>
 </article>
-
-<style>
-	.content :global(main > * + *) {
-		margin-top: 1rem;
-	}
-
-	.slide-preview {
-		padding-bottom: 2rem;
-		margin-bottom: 2rem;
-		border-bottom: 4px solid var(--theme-divider);
-	}
-
-	header {
-		display: flex;
-		flex-direction: column;
-		text-align: left;
-		align-items: flex-start;
-		justify-content: center;
-
-		padding-bottom: 2rem;
-	}
-
-	.title,
-	.publish-date {
-		margin: 0;
-	}
-
-	.publish-date {
-		font-size: 1.25rem;
-		color: var(--theme-text-lighter);
-	}
-
-	.title {
-		font-size: 2.25rem;
-		font-weight: 700;
-		color: var(--theme-text);
-	}
-</style>
