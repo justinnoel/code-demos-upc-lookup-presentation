@@ -9,7 +9,7 @@ const { title, description, publishDate, heroImage, permalink, alt } = content;
 
 <html lang={content.lang || "en"}>
 	<head>
-		<BaseHead {title} descript={description} permalink{permalink} />
+		<BaseHead {title} {description} {permalink} />
 		<link rel="stylesheet" href="/presentation.css" />
 	</head>
 

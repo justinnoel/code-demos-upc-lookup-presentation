@@ -7,10 +7,10 @@ interface MarkdownFrontmatter {
 	index: number;
 }
 
-let title = "UPC Lookup Service with Astro &amp; Cloudflare";
-let description =
+const title = "UPC Lookup Service with Astro &amp; Cloudflare";
+const description =
 	'How to use Astro and Cloudflare to build and host amazing "serverless" projects.';
-let permalink = "https://slides-astro-cloudflare-upc.codedemos.dev/";
+const permalink = "https://slides-astro-cloudflare-upc.codedemos.dev/";
 
 const allSlids = Astro.fetchContent<MarkdownFrontmatter>("./slides/*.md");
 const sortedSlides = allSlids.sort((a, b) => a.index - b.index);
