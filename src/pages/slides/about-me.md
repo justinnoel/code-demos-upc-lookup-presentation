@@ -1,7 +1,6 @@
 ---
 title: "About Me"
 description: "Who is this Justin Noel guy?"
-publishDate: "Tuesday, November 8, 2021"
 heroImage: "/social.jpg"
 alt: "Astro"
 layout: "../../layouts/Presentation.astro"

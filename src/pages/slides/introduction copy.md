@@ -1,7 +1,6 @@
 ---
 title: "Introduction Copy"
 description: "Today, we'll demonstrate building a simple UPC lookup service. The service will be build using Cloudflare Workers and KV. The website will be generated with the Astro static site generator and hosted on Cloudflare Pages."
-publishDate: "Tuesday, November 8, 2021"
 heroImage: "/social.jpg"
 alt: "Astro"
 layout: "../../layouts/Presentation.astro"
