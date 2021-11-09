@@ -2,6 +2,9 @@
 	"name": "code-demo-presentation-upc-lookup",
 	"version": "0.0.1",
 	"private": true,
+	"repository": {
+		"url": "https://github.com/justinnoel/code-demo-presentation-upc-lookup"
+	},
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
