@@ -1,4 +1,6 @@
 ---
+// TODO: Why don't SlideType typings work. Everything says "any"
+import { SlideType } from "../presentation.d.ts";
 import BaseHead from "../components/BaseHead.astro";
 import SlideHeader from "../components/SlideHeader.astro";
 import SlidePreview from "../components/SlidePreview.astro";
@@ -9,11 +11,6 @@ const description =
 const permalink = "https://slides-astro-cloudflare-upc.codedemos.dev/";
 
 import slides from "../data/slides.json";
-export async function getStaticPaths() {
-	return slides.map((slide) => {
-		return { params: { slug: slide.linkText }, props: { slide } };
-	});
-}
 ---
 
 <html lang="en">
@@ -26,7 +23,7 @@ export async function getStaticPaths() {
 		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
 			<h2 class="text-3xl">{description}</h2>
 			<article aria-label="Presentation slides list">
-				{slides.map((slide) => <SlidePreview slide={slide} />)}
+				{slides.map((slide: SlideType) => <SlidePreview slide={slide} />)}
 			</article>
 		</main>
 	</body>
