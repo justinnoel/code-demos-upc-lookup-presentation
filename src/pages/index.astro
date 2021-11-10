@@ -1,6 +1,6 @@
 ---
 // TODO: Why don't SlideType typings work. Everything says "any"
-import { SlideType } from "../presentation.d.ts";
+// import { SlideType } from "../presentation.d.ts";
 import BaseHead from "../components/BaseHead.astro";
 import SlideHeader from "../components/SlideHeader.astro";
 import SlidePreview from "../components/SlidePreview.astro";
@@ -23,7 +23,8 @@ import slides from "../data/slides.json";
 		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
 			<h2 class="text-3xl">{description}</h2>
 			<article aria-label="Presentation slides list">
-				{slides.map((slide: SlideType) => <SlidePreview slide={slide} />)}
+				<!-- {slides.map((slide: SlideType) => <SlidePreview slide={slide} />)} -->
+				{slides.map((slide) => <SlidePreview slide={slide} />)}
 			</article>
 		</main>
 	</body>

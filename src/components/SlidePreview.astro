@@ -1,11 +1,12 @@
 ---
 // TODO: Why don't SlideType typings work. Everything says "any"
-import { SlideType } from "../presentation.d.ts";
-export interface Props {
-	slide: SlideType;
-}
+// import { SlideType } from "../presentation.d.ts";
+// export interface Props {
+// 	slide: SlideType;
+// }
 
-const { slide } = Astro.props as Props;
+// const { slide } = Astro.props as Props;
+const { slide } = Astro.props;
 const { title, previewText, linkText } = slide;
 ---
 

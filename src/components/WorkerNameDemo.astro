@@ -1,0 +1,76 @@
+---
+import { Markdown } from "astro/components";
+---
+
+<Markdown>
+	```
+	// Cloudflare Workers is a v8 Isolate. So, it has event handlers just
+	// like a browser does. This listens for any HTTP request and sends it to 
+	// the `handleRequest` function
+	addEventListener("fetch", (event) => {
+	   event.respondWith(
+	      handleRequest(event.request).catch(
+	         (err) => new Response(err.stack, { status: 500 })
+	      )
+	   );
+	});
+	
+	async function handleRequest(request) {
+	   const { pathname } = new URL(request.url);
+	   const greetingString = "/greeting/";
+
+		// Route greets a visitor when they pass in their name.
+		// Ex: https://hello-name-kv-demo.justin-cftemp.workers.dev/greeting/Justin
+
+	   if (pathname.startsWith(greetingString)) {
+	      const now = Date.now();
+        // Extract the visitors name or provide a default
+	      const name = pathname.replace(greetingString, "") || "World";
+        // Keys are always sorted lexigraphically. To get the responses sorted
+		  // in order of visit add the timestamp in front.
+        // This would NOT be a good way to store keys if you needed to query
+		  // on these keys
+        const key = `${now}_${name}`;
+	      const value = JSON.stringify({
+	         name,
+	         ts: now,
+	      });
+
+
+        // Store the data in KV
+        // Storing the same value in metadata is a trick for optimized fetching
+        // but is only possible when the value is small.
+	      await HELLO_NAME_KV.put(key, value, { metadata: value });
+
+	      return new Response(`<h1>Goodbye, ${name}!</h1>`, {
+	         headers: {
+	            "content-type": "text/html",
+	         },
+	      });
+	   }
+
+		// Route returns the names and timestamps of everyone that has been greeted
+		// Ex: https://hello-name-kv-demo.justin-cftemp.workers.dev/visitors
+
+	   if (pathname.startsWith("/visitors")) {
+        // Fetch the entire list of visitors from KV
+	      const visitorData = (await HELLO_NAME_KV.list()) || { keys: [] };
+
+        // Convert the visitor list into HTML
+	      const visitors = visitorData.keys.reduce((list, visitor) => {
+	         const info = JSON.parse(visitor.metadata);
+	         return list + `<li>${info.name}, ${info.ts}</li>`;
+	      }, "");
+
+	      return new Response(`<h1>Visitors</h1><ul>${visitors}</ul> `, {
+	         headers: {
+	            "content-type": "text/html",
+	         },
+	      });
+	   }
+
+		// 404 any other requests
+	   return new Response("Not found", { status: 404 });
+	}
+	```
+</Markdown>
