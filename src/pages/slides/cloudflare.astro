@@ -14,7 +14,7 @@ const permalink =
 		<BaseHead {title} {description} {permalink} />
 	</head>
 
-	<body class=" text-gray-700 mx-auto max-w-6xl">
+	<body class=" text-gray-700 mx-auto max-w-6xl mb-32">
 		<SlideHeader />
 		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
 			<!-- <h3 class="text-4xl">Astre</h3> -->
@@ -37,6 +37,8 @@ const permalink =
 			<p class="mt-8 text-2xl">
 				We'll be using the following Cloudflare services:
 			</p>
+
+			<hr class="mt-16 mx-4 text-gray-300" />
 
 			<h3 id="pages" class="mt-8 text-4xl">Pages</h3>
 			<p class="mt-8 text-2xl">
@@ -66,6 +68,8 @@ const permalink =
 				as well. For now, see <a href="#workers">Workers</a>.
 			</p>
 
+			<hr class="mt-16 mx-4 text-gray-300" />
+
 			<h3 id="workers" class="mt-8 text-4xl">Workers</h3>
 			<p class="mt-8 text-2xl">
 				Unlike most "serveless functions" available from other providers, <a
@@ -94,6 +98,8 @@ const permalink =
 				without accessing an external service or API will respond nearly
 				instanly anywhere in the world.
 			</p>
+
+			<hr class="mt-16 mx-4 text-gray-300" />
 
 			<h3 id="workers-kv" class="mt-8 text-4xl">Workers KV</h3>
 			<p class="mt-8 text-2xl">
