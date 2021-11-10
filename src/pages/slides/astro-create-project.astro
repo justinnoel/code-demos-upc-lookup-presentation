@@ -18,31 +18,45 @@ const permalink =
 		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
 			<h3 class="text-4xl">Start with a Bare Bones HTML Page</h3>
 			<p class="mt-8 text-2xl">
-				Our project starts with a simple HTML page that has been pushed to <a
-					href="https://github.com/justinnoel/code-demos-upc-lookup-front-end"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="underline">Github.</a>
+				Our project starts with a simple HTML page that has been pushed to
+				Github.
 			</p>
 
 			<p class="mt-8 text-2xl">
-				A Pages project has been created on Cloudflare for this Github repo.
+				A Cloudflare Pages project has been created on for this Github repo.
 				Now, every time any branch in this repo gets modified, Cloudflare will
 				rebuild it.
 			</p>
 
-			<p class="my-8 text-2xl">The demo can be viewed at</p>
-			<a
-				href="https://code-demos-upc-lookup-front-end.pages.dev"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="mt-8 text-2xl ml-8 underline"
-				>https://code-demos-upc-lookup-front-end.pages.dev</a>
+			<p class="mt-8 text-2xl">
+				Changes to the "main" branch will be published to the "production" URL.
+			</p>
+
+			<p class="my-8 text-2xl">Original Version Links</p>
+
+			<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
+				<a
+					href="https://github.com/justinnoel/code-demos-upc-lookup-front-end/tree/main"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="underline hover:text-yellow-700">Github (main branch).</a>
+			</div>
+
+			<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
+				<a
+					href="https://upc-lookup-frontend.codedemos.dev"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-2xl underline hover:text-yellow-700"
+					>https://upc-lookup-frontend.codedemos.dev</a>
+			</div>
+
+			<hr class="mt-16 mx-4 text-gray-300" />
 
 			<h3 class="mt-8 text-4xl">Convert the Project to Astro</h3>
 			<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
 				<div>
-					<code>npm init astro</code>
+					<code>npm init astro --template framework-preact</code>
 				</div>
 				<div>
 					<code>yarn</code>
@@ -50,6 +64,36 @@ const permalink =
 				<div>
 					<code>yarn dev</code>
 				</div>
+			</div>
+
+			<p class="my-8 text-2xl">
+				<span class="font-bold">NOTE:</span> I've modified it just slightly for this
+				presentation
+			</p>
+
+			<p class="mt-8 text-2xl">
+				Changes to any branch other than "main" will be published to a unique
+				preview URL.
+			</p>
+
+			<p class="my-8 text-2xl">Astro-ized Version Links</p>
+
+			<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
+				<a
+					href="https://github.com/justinnoel/code-demos-upc-lookup-front-end/tree/feat/add-astro-to-project"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="underline hover:text-yellow-700"
+					>Github ( feat/add-astro-to-project branch)</a>
+			</div>
+
+			<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
+				<a
+					href="https://344d59a7.code-demos-upc-lookup-front-end.pages.dev"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-2xl underline hover:text-yellow-700"
+					>https://344d59a7.code-demos-upc-lookup-front-end.pages.dev</a>
 			</div>
 		</main>
 	</body>
