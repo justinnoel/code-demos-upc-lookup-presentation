@@ -18,7 +18,7 @@ const { classNames, headerElement, id, text } = Astro.props as Props;
 	<img
 		alt=""
 		class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
-		src="../assets/img/link.svg" />
+		src={Astro.resolve("../assets/link.svg")} />
 	{text}
 </a>
 {`</${headerElement}>`}
