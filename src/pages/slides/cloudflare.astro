@@ -17,7 +17,6 @@ const permalink =
 	<body class=" text-gray-700 mx-auto max-w-6xl mb-32">
 		<SlideHeader />
 		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
-			<!-- <h3 class="text-4xl">Astre</h3> -->
 			<p class="mt-8 text-2xl">
 				<a
 					class="underline hover:text-yellow-700"
@@ -40,7 +39,16 @@ const permalink =
 
 			<hr class="mt-16 mx-4 text-gray-300" />
 
-			<h3 id="pages" class="mt-8 text-4xl">Pages</h3>
+			<h3 class="mt-8 text-4xl">
+				<a id="pages" href="#pages" aria-hidden="true" class="group">
+					<img
+						alt=""
+						class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
+						src="../assets/img/link.svg" />
+					Pages
+				</a>
+			</h3>
+
 			<p class="mt-8 text-2xl">
 				<a
 					class="underline hover:text-yellow-700"
@@ -70,7 +78,16 @@ const permalink =
 
 			<hr class="mt-16 mx-4 text-gray-300" />
 
-			<h3 id="workers" class="mt-8 text-4xl">Workers</h3>
+			<h3 class="mt-8 text-4xl">
+				<a id="workers" href="#workers" aria-hidden="true" class="group">
+					<img
+						alt=""
+						class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
+						src="../assets/img/link.svg" />
+					Workers
+				</a>
+			</h3>
+
 			<p class="mt-8 text-2xl">
 				Unlike most "serveless functions" available from other providers, <a
 					class="underline hover:text-yellow-700"
@@ -101,7 +118,16 @@ const permalink =
 
 			<hr class="mt-16 mx-4 text-gray-300" />
 
-			<h3 id="workers-kv" class="mt-8 text-4xl">Workers KV</h3>
+			<h3 class="mt-8 text-4xl">
+				<a id="workers-kv" href="#workers-kv" aria-hidden="true" class="group">
+					<img
+						alt=""
+						class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
+						src="../assets/img/link.svg" />
+					Workers KV
+				</a>
+			</h3>
+
 			<p class="mt-8 text-2xl">
 				<a
 					class="underline hover:text-yellow-700"
@@ -136,6 +162,115 @@ const permalink =
 					target="_blank"
 					rel="noopener noreferrer">Durable Objects</a> which is still in beta.
 			</p>
+
+			<hr class="mt-16 mx-4 text-gray-300" />
+
+			<h3 class="mt-8 text-4xl">
+				<a
+					id="cloudflare-ecosystem"
+					href="#cloudflare-ecosystem"
+					aria-hidden="true"
+					class="group">
+					<img
+						alt=""
+						class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
+						src="../assets/img/link.svg" />
+					Cloudflare Ecosystem
+				</a>
+			</h3>
+
+			<p class="mt-8 text-2xl">
+				Cloudflare has a strong developer community around it. There are
+				countless tools to make developing with Cloudflare a breeze. Here are a
+				few examples.
+			</p>
+
+			<ul class="mt-4 text-xl">
+				<li class="mt-8">
+					<a
+						class="underline hover:text-yellow-700"
+						href="https://developers.cloudflare.com/workers/cli-wrangler"
+						>Wrangler: Cloudflare CLI for interfacing with Cloudflare Workers
+						and KV</a>
+				</li>
+
+				<li class="mt-8">
+					<a
+						class="underline hover:text-yellow-700"
+						href="https://github.com/lukeed/cfw"
+						>cfw: Build and deploy utility for Cloudflare Workers</a>
+				</li>
+
+				<li class="mt-8">
+					<a
+						class="underline hover:text-yellow-700"
+						href="https://github.com/wilsonzlin/edgesearch"
+						>edgesearch: Serverless full-text search with Cloudflare Workers,
+						WebAssembly, and Roaring Bitmaps
+					</a>
+				</li>
+
+				<li class="mt-8">
+					<a
+						class="underline hover:text-yellow-700"
+						href="https://github.com/fauna-labs/fauna-workers"
+						>fauna-workers: Template for building fast, globally distributed
+						applications using Cloudflare Workers and Fauna</a>
+				</li>
+
+				<li class="mt-8">
+					<a
+						class="underline hover:text-yellow-700"
+						href="https://flareact.com/"
+						>Flareact: Edge-rendered React framework built for Cloudflare
+						Workers</a>
+				</li>
+
+				<li class="mt-8">
+					<a
+						class="underline hover:text-yellow-700"
+						href="https://github.com/kwhitley/itty-router"
+						>Itty Router: A little router</a>
+				</li>
+
+				<li class="mt-8">
+					<a
+						class="underline hover:text-yellow-700"
+						href="https://github.com/kwhitley/itty-router-extras"
+						>Itty Router Extras: An assortment of delicious extras for the
+						calorie-light itty-router</a>
+				</li>
+
+				<li class="mt-8">
+					<a
+						class="underline hover:text-yellow-700"
+						href="https://miniflare.dev"
+						>Miniflare: Fully-local simulator for Cloudflare Workers</a>
+				</li>
+
+				<li class="mt-8">
+					<a
+						class="underline hover:text-yellow-700"
+						href="https://github.com/Cherry/placeholders.dev"
+						>placeholders.dev: Generate custom placeholder images, powered by
+						Cloudflare Workers in 200+ edge locations</a>
+				</li>
+
+				<li class="mt-8">
+					<a
+						class="underline hover:text-yellow-700"
+						href="https://sunderjs.com/"
+						>Sunder: Minimal and unopinionated framework for Service Workers</a>
+				</li>
+
+				<li class="mt-8">
+					<a
+						class="underline hover:text-yellow-700"
+						href="https://github.com/lukeed/worktop"
+						>Worktop: Next generation web framework for Cloudflare Workers
+					</a>
+				</li>
+			</ul>
 		</main>
 	</body>
 </html>
