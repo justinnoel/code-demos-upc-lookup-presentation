@@ -1,5 +1,15 @@
 ---
+export interface Props {
+	element?: "h1" | "p";
+}
+
 const title = "UPC Lookup Service with Astro &amp; Cloudflare";
+
+const { element = "p" } = Astro.props;
+
+const version1 = `<${element} class="hidden md:block mx-8 text-4xl">${title}</${element}>`;
+
+const version2 = `<${element} class="md:hidden text-2xl">${title}</${element}>`;
 ---
 
 <header class="p-8 max-h-8">
@@ -14,13 +24,9 @@ const title = "UPC Lookup Service with Astro &amp; Cloudflare";
 					src={Astro.resolve("../assets/cf-logo-v.svg")}
 					class="max-h-16"
 					alt="Cloudflare logo" />
-				<h1 class="hidden md:block mx-8 text-4xl">
-					{title}
-				</h1>
+				{version1}
 			</div>
-			<h1 class="md:hidden text-2xl">
-				{title}
-			</h1>
+			{version2}
 		</a>
 	</nav>
 </header>

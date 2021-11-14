@@ -5,7 +5,7 @@ import SlideHeader from "../../components/SlideHeader.astro";
 const title = "Justin Noel - Mobile Developer";
 const description =
 	"Justin Noel - Full stack capable web and mobile app developer";
-const permalink = "https://slides-astro-cloudflare-upc.codedemos.dev/about-me";
+const permalink = "https://upc-lookup-presentation.codedemos.dev/about-me";
 
 const socialLinks = [
 	{
@@ -20,7 +20,7 @@ const socialLinks = [
 	},
 	{
 		link: "https://justinnoel.dev",
-		text: "Blog",
+		text: "JustinNoel.dev",
 		icon: "/assets/img/blog.svg",
 	},
 ];
@@ -42,9 +42,18 @@ const skills = [
 	<body class=" text-gray-700 mx-auto max-w-6xl mb-32">
 		<SlideHeader />
 		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
-			<h3 class="text-4xl">
-				Cheesy <span class="not-sr-only">🧀</span> Bio Alert!
-			</h3>
+			<h1 class="mt-8 text-6xl">About Justin Noel</h1>
+
+			<h2 class="mt-8 text-4xl">
+				<a id="biography" href="#biography" aria-hidden="true" class="group">
+					<img
+						alt=""
+						class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
+						src="../assets/img/link.svg" />
+					Cheesy <span class="not-sr-only">🧀</span> Bio Alert!
+				</a>
+			</h2>
+
 			<p class="mt-4 text-2xl">
 				In 2013, I left my boring enterprise developer position in the telecom ☎
 				industry to jump into the exciting world of mobile app 📱 development.
@@ -65,7 +74,20 @@ const skills = [
 
 			<hr class="mt-16 mx-4 text-gray-300" />
 
-			<h3 class="mt-12 text-4xl">Sorta Kinda Looking for Work</h3>
+			<h2 class="mt-8 text-4xl">
+				<a
+					id="looking-for-opportunities"
+					href="#looking-for-opportunities"
+					aria-hidden="true"
+					class="group">
+					<img
+						alt=""
+						class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
+						src="../assets/img/link.svg" />
+					Sorta Kinda Looking for Work
+				</a>
+			</h2>
+
 			<p class="mt-4 text-2xl">
 				If you need a short-term contract developer, a part-time developer
 				advocate <span class="not-sr-only">🥑</span>, have some heavy ETL to do,
@@ -76,7 +98,7 @@ const skills = [
 				me.
 			</p>
 
-			<h4 class="mt-12 text-4xl">Skills</h4>
+			<h3 class="mt-12 text-4xl">Skills</h3>
 			<ul class="my-6">
 				{skills.map((skill) => <li class="mt-6 ml-6">
 						<p class="text-xl">{skill}</p>
@@ -85,7 +107,7 @@ const skills = [
 
 			<hr class="mt-16 mx-4 text-gray-300" />
 
-			<h3 class="mt-12 text-2xl">Social Links</h3>
+			<h2 class="mt-12 text-2xl">Social Links</h2>
 
 			<ul class="my-6">
 				{socialLinks.map((social) => <li class="mt-6 ml-6">

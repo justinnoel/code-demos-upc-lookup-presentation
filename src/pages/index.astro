@@ -8,7 +8,7 @@ import SlidePreview from "../components/SlidePreview.astro";
 const title = "UPC Lookup Service with Astro &amp; Cloudflare";
 const description =
 	'How to use Astro and Cloudflare to build and host amazing "serverless" projects.';
-const permalink = "https://slides-astro-cloudflare-upc.codedemos.dev/";
+const permalink = "https://upc-lookup-presentation.codedemos.dev/";
 
 import slides from "../data/slides.json";
 ---
@@ -19,9 +19,8 @@ import slides from "../data/slides.json";
 	</head>
 
 	<body class=" text-gray-700 mx-auto max-w-6xl">
-		<SlideHeader />
+		<SlideHeader element="h1" />
 		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
-			<h2 class="text-3xl">{description}</h2>
 			<article aria-label="Presentation slides list">
 				<!-- {slides.map((slide: SlideType) => <SlidePreview slide={slide} />)} -->
 				{slides.map((slide) => <SlidePreview slide={slide} />)}
