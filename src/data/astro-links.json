@@ -1,0 +1,96 @@
+[
+	{
+		"link": "https://astro.new/",
+		"text": "astro.new: A starting point to try out different Astro templates for the current release of Astro"
+	},
+	{
+		"link": "https://astro.new/next/",
+		"text": "* astro.new/next: A starting point to try out different Astro templates for the very soon to be released version of Astro"
+	},
+	{
+		"link": "https://github.com/markteekman/accessible-astro-components",
+		"text": "accessible-astro-components: A set of accessible front-end components for the Astro static site builder"
+	},
+	{
+		"link": "https://github.com/trashhalo/astro-command",
+		"text": "astro-command: Run commands as Astro components"
+	},
+	{
+		"link": "https://github.com/one-aalam/astro-ink",
+		"text": "astro-ink: Crisp, minimal, personal blog theme for Astro"
+	},
+	{
+		"link": "https://github.com/jasikpark/astro-katex",
+		"text": "astro-katex: Astro Component for rendering LaTex via KaTeX"
+	},
+	{
+		"link": "https://github.com/mzaini30/astro-meta",
+		"text": "astro-meta: Add a title and description to a page"
+	},
+	{
+		"link": "https://github.com/rebelchris/astro-modal",
+		"text": "astro-modal: A modal for use in Astro"
+	},
+	{
+		"link": "https://github.com/snowpackjs/astro-og-image",
+		"text": "astro-og-image: Open Graph images for Astro sites"
+	},
+	{
+		"link": "https://github.com/trashhalo/astro-pandoc",
+		"text": "astro-pandoc: Astro component for using pandoc to convert content"
+	},
+	{
+		"link": "https://github.com/RafidMuhymin/astro-script",
+		"text": "astro-script: A simple script management component for Astro"
+	},
+	{
+		"link": "https://github.com/jonasmerlin/astro-seo",
+		"text": "astro-seo: Makes it easy to add SEO relevant tags to your Astro app"
+	},
+	{
+		"link": "https://github.com/RafidMuhymin/astro-spa",
+		"text": "astro-spa: An Astro JS component that turns a website into an SPA and boost performance using various techniques"
+	},
+	{
+		"link": "https://github.com/PhilDL/astro-starter-ghost",
+		"text": "astro-starter-ghost: A starter template to build lightning fast websites with Ghost and Astro"
+	},
+	{
+		"link": "https://github.com/robertguss/Astro-Theme-Creek",
+		"text": "Astro-Theme-Creek: A theme for Astro"
+	},
+	{
+		"link": "https://github.com/aFuzzyBear/astro-ui",
+		"text": "astro-ui: MonoRepo to house the collective distribution for Astro Components",
+		"data": [
+			{
+				"link": "https://github.com/aFuzzyBear/astro-ui/tree/main/components/AVPlayer",
+				"text": "AVPlayer"
+			},
+			{
+				"link": "https://github.com/aFuzzyBear/astro-ui/tree/main/components/MediaPlayer",
+				"text": "MediaPlayer"
+			},
+			{
+				"link": "https://github.com/aFuzzyBear/astro-ui/tree/main/components/Stylesheet",
+				"text": "Stylesheet: Simple component to help abstract the monotony of adding stylesheets to any Astro page"
+			},
+			{
+				"link": "https://github.com/aFuzzyBear/astro-ui/tree/main/components/XElement",
+				"text": "XElement: Generate any type of specialised Web Component from within Astro from a single interface"
+			},
+			{
+				"link": "https://github.com/aFuzzyBear/astro-ui/tree/main/components/XHooks",
+				"text": "XHooks"
+			}
+		]
+	},
+	{
+		"link": "https://github.com/jonathantneal/astro-youtube-component",
+		"text": "astro-youtube-component: Astro implementation of Lite YouTube Embed"
+	},
+	{
+		"link": "https://github.com/jonathantneal/radix-icons-in-astro",
+		"text": "radix-icons-in-astro: Radix Icons in Astro"
+	}
+]

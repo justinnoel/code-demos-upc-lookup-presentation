@@ -1,0 +1,14 @@
+---
+import { ComponentChildren } from "preact";
+export interface Props {
+	children: ComponentChildren;
+	listClassNames: string;
+	listElement: "ol" | "ul";
+}
+
+const { listClassNames, listElement } = Astro.props as Props;
+---
+
+{`<${listElement} class="${listClassNames}">`}
+<slot />
+{`</${listElement}>`}

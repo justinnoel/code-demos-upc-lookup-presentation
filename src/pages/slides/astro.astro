@@ -1,6 +1,16 @@
 ---
 import BaseHead from "../../components/BaseHead.astro";
 import SlideHeader from "../../components/SlideHeader.astro";
+import ExternalLink from "../../components/ExternalLink.astro";
+import List from "../../components/List.astro";
+
+type AstroLink = {
+	link: string;
+	text: string;
+	data?: AstroLink[];
+};
+
+import AstroLinks from "../../data/astro-links.json";
 
 const title = "Astro Static Site Generator";
 const description =
@@ -137,174 +147,25 @@ const permalink = "https://upc-lookup-presentation.codedemos.dev/astro";
 				some examples.
 			</p>
 
-			<ul class="mt-4 text-xl">
-				<!-- NOTE: Entries should be in alphabetical order. However, the
-				first entry (astro.new is intentionally out of order) -->
-				<li class="mt-8">
-					<a class="underline hover:text-yellow-700" href="https://astro.new/"
-						>astro.new: A starting point to try out different Astro templates
-						for the current release of Astro</a>
-				</li>
+			<!-- This list componenent could be refactored to be more DRY but right
+			now only needs to support 2 levels of nesting. Good enough for now! -->
+			<List listClassNames="mt-4 text-xl" listElement="ul">
+				{AstroLinks.map(({ data, link, text }: AstroLink) => {
+					if (data) {
+						return <List listClassNames="mt-4 text-xl" listElement="ul">
+								{data.map(({ link, text }: AstroLink) => {
+									return <li class="mt-8 ml-8">
+											<ExternalLink classNames="underline hover:text-yellow-700" linkText={text} link={link} />
+										</li>;
+								})}
+							</List>;
+					}
 
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://astro.new/next/"
-						>* astro.new/next: A starting point to try out different Astro
-						templates for the very soon to be released version of Astro</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/markteekman/accessible-astro-components"
-						>accessible-astro-components: A set of accessible front-end
-						components for the Astro static site builder.</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/trashhalo/astro-command"
-						>astro-command: Run commands as Astro components</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/one-aalam/astro-ink"
-						>astro-ink: Crisp, minimal, personal blog theme for Astro</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/jasikpark/astro-katex"
-						>astro-katex: Astro Component for rendering LaTex via KaTeX</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/mzaini30/astro-meta"
-						>astro-meta: Add a title and description to a page</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/rebelchris/astro-modal"
-						>astro-modal: A modal for use in Astro</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/snowpackjs/astro-og-image"
-						>astro-og-image: Open Graph images for Astro sites</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/trashhalo/astro-pandoc"
-						>astro-pandoc: Astro component for using pandoc to convert content</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/RafidMuhymin/astro-script"
-						>astro-script: A simple script management component for Astro</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/jonasmerlin/astro-seo"
-						>astro-seo: Makes it easy to add SEO relevant tags to your Astro app</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/RafidMuhymin/astro-spa"
-						>astro-spa: An Astro JS component that turns a website into an SPA
-						and boost performance using various techniques</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/PhilDL/astro-starter-ghost"
-						>astro-starter-ghost: A starter template to build lightning fast
-						websites with Ghost and Astro</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/robertguss/Astro-Theme-Creek"
-						>Astro-Theme-Creek: A theme for Astro</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/aFuzzyBear/astro-ui"
-						>astro-ui: MonoRepo to house the collective distribution for Astro
-						Components
-					</a>
-					<ul class="mt-4 text-xl ml-8">
-						<li class="mt-8">
-							<a
-								class="underline hover:text-yellow-700"
-								href="https://github.com/aFuzzyBear/astro-ui/tree/main/components/AVPlayer"
-								>AVPlayer</a>
-						</li>
-						<li class="mt-8">
-							<a
-								class="underline hover:text-yellow-700"
-								href="https://github.com/aFuzzyBear/astro-ui/tree/main/components/MediaPlayer"
-								>MediaPlayer</a>
-						</li>
-						<li class="mt-8">
-							<a
-								class="underline hover:text-yellow-700"
-								href="https://github.com/aFuzzyBear/astro-ui/tree/main/components/Stylesheet"
-								>Stylesheet: Simple component to help abstract the monotony of
-								adding stylesheets to any Astro project</a>
-						</li>
-						<li class="mt-8">
-							<a
-								class="underline hover:text-yellow-700"
-								href="https://github.com/aFuzzyBear/astro-ui/tree/main/components/XElement"
-								>XElement: Generate any type of specialised Web Component from
-								within Astro from a single interface</a>
-						</li>
-						<li class="mt-8">
-							<a
-								class="underline hover:text-yellow-700"
-								href="https://github.com/aFuzzyBear/astro-ui/tree/main/components/XHooks"
-								>XHooks</a>
-						</li>
-					</ul>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/jonathantneal/astro-youtube-component"
-						>astro-youtube-component: Astro implementation of Lite YouTube Embed</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/jonathantneal/radix-icons-in-astro"
-						>radix-icons-in-astro: Radix Icons in Astro</a>
-				</li>
-			</ul>
+					return <li class="mt-8">
+							<ExternalLink classNames="underline hover:text-yellow-700" linkText={text} link={link} />
+						</li>;
+				})}
+			</List>
 		</main>
 	</body>
 </html>
