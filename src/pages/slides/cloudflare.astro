@@ -1,6 +1,17 @@
 ---
 import BaseHead from "../../components/BaseHead.astro";
+import ExternalLink from "../../components/ExternalLink.astro";
+import HeaderLink from "../../components/HeaderLink.astro";
+import List from "../../components/List.astro";
 import SlideHeader from "../../components/SlideHeader.astro";
+
+import CloudflareLinks from "../../data/cloudflare-links.json";
+
+type CloudflareLink = {
+	link: string;
+	text: string;
+	data?: CloudflareLink[];
+};
 
 const title = "Cloudflare";
 const description =
@@ -16,16 +27,19 @@ const permalink = "https://upc-lookup-presentation.codedemos.dev/cloudflare";
 	<body class=" text-gray-700 mx-auto max-w-6xl mb-32">
 		<SlideHeader />
 		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
-			<h1 class="mt-8 text-6xl">Cloudflare</h1>
+			<HeaderLink
+				classNames="mt-8 text-6xl"
+				headerElement="h1"
+				id="/slides/cloudflare"
+				text="Cloudflare" />
 
 			<p class="mt-8 text-2xl">
-				<a
-					class="underline hover:text-yellow-700"
-					href="https://cloudflare.com"
-					target="_blank"
-					rel="noopener noreferrer">Cloudflare</a> is widely known as a CDN and security
-				service for the internet. They protect millions of sites against DDoS and
-				other attack vectors.
+				<ExternalLink
+					classNames="underline hover:text-yellow-700"
+					linkText="Cloudflare"
+					link="https://cloudflare.com" />
+				is widely known as a CDN and security service for the internet. They protect
+				millions of sites against DDoS and other attack vectors.
 			</p>
 
 			<p class="mt-8 text-2xl">
@@ -40,23 +54,18 @@ const permalink = "https://upc-lookup-presentation.codedemos.dev/cloudflare";
 
 			<hr class="mt-16 mx-4 text-gray-300" />
 
-			<h2 class="mt-8 text-4xl">
-				<a id="pages" href="#pages" aria-hidden="true" class="group">
-					<img
-						alt=""
-						class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
-						src="../assets/img/link.svg" />
-					Pages
-				</a>
-			</h2>
+			<HeaderLink
+				classNames="mt-8 text-4xl"
+				headerElement="h2"
+				id="pages"
+				text="Pages" />
 
 			<p class="mt-8 text-2xl">
-				<a
-					class="underline hover:text-yellow-700"
-					href="https://pages.cloudflare.com"
-					target="_blank"
-					rel="noopener noreferrer">Pages</a> is currently a hosting service for
-				static sites.
+				<ExternalLink
+					classNames="underline hover:text-yellow-700"
+					linkText="Pages"
+					link="https://pages.cloudflare.com" />
+				is currently a hosting service for static sites.
 			</p>
 
 			<p class="mt-8 text-2xl">
@@ -79,25 +88,21 @@ const permalink = "https://upc-lookup-presentation.codedemos.dev/cloudflare";
 
 			<hr class="mt-16 mx-4 text-gray-300" />
 
-			<h2 class="mt-8 text-4xl">
-				<a id="workers" href="#workers" aria-hidden="true" class="group">
-					<img
-						alt=""
-						class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
-						src="../assets/img/link.svg" />
-					Workers
-				</a>
-			</h2>
+			<HeaderLink
+				classNames="mt-8 text-4xl"
+				headerElement="h2"
+				id="workers"
+				text="Workers" />
 
 			<p class="mt-8 text-2xl">
-				Unlike most "serveless functions" available from other providers, <a
-					class="underline hover:text-yellow-700"
-					href="https://workers.cloudflare.com/"
-					target="_blank"
-					rel="noopener noreferrer">Workers</a> do not use nodejs. Instead, Cloudflare
-				used v8 Isolates. These are effectively instances of the Chrome JavaScript
-				engine running in the cloud. Because of this, they have extremely low cold
-				start times.
+				Unlike most "serveless functions" available from other providers,
+				<ExternalLink
+					classNames="underline hover:text-yellow-700"
+					linkText="Workers"
+					link="https://workers.cloudflare.com/" />
+				do not use nodejs. Instead, Cloudflare used v8 Isolates. These are effectively
+				instances of the Chrome JavaScript engine running in the cloud. Because of
+				this, they have extremely low cold start times.
 			</p>
 
 			<p class="mt-8 text-2xl">
@@ -119,23 +124,18 @@ const permalink = "https://upc-lookup-presentation.codedemos.dev/cloudflare";
 
 			<hr class="mt-16 mx-4 text-gray-300" />
 
-			<h2 class="mt-8 text-4xl">
-				<a id="workers-kv" href="#workers-kv" aria-hidden="true" class="group">
-					<img
-						alt=""
-						class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
-						src="../assets/img/link.svg" />
-					Workers KV
-				</a>
-			</h2>
-
+			<HeaderLink
+				classNames="mt-8 text-4xl"
+				headerElement="h2"
+				id="workers-kv"
+				text="Workers KV" />
 			<p class="mt-8 text-2xl">
-				<a
-					class="underline hover:text-yellow-700"
-					href="https://www.cloudflare.com/products/workers-kv/"
-					target="_blank"
-					rel="noopener noreferrer">Workers KV</a> is an extremely low latency, key-value
-				storage service. You put data in and fetch data out.
+				<ExternalLink
+					classNames="underline hover:text-yellow-700"
+					linkText="Workers KV"
+					link="https://www.cloudflare.com/products/workers-kv/" />
+				is an extremely low latency, key-value storage service. You put data in and
+				fetch data out.
 			</p>
 
 			<p class="mt-8 text-2xl">
@@ -166,19 +166,11 @@ const permalink = "https://upc-lookup-presentation.codedemos.dev/cloudflare";
 
 			<hr class="mt-16 mx-4 text-gray-300" />
 
-			<h2 class="mt-8 text-4xl">
-				<a
-					id="cloudflare-ecosystem"
-					href="#cloudflare-ecosystem"
-					aria-hidden="true"
-					class="group">
-					<img
-						alt=""
-						class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
-						src="../assets/img/link.svg" />
-					Cloudflare Ecosystem
-				</a>
-			</h2>
+			<HeaderLink
+				classNames="mt-8 text-4xl"
+				headerElement="h2"
+				id="cloudflare-ecosystem"
+				text="Cloudflare Ecosystem" />
 
 			<p class="mt-8 text-2xl">
 				Cloudflare has a strong developer community around it. There are
@@ -186,92 +178,25 @@ const permalink = "https://upc-lookup-presentation.codedemos.dev/cloudflare";
 				few examples.
 			</p>
 
-			<ul class="mt-4 text-xl">
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://developers.cloudflare.com/workers/cli-wrangler"
-						>Wrangler: Cloudflare CLI for interfacing with Cloudflare Workers
-						and KV</a>
-				</li>
+			<!-- This list componenent could be refactored to be more DRY but right
+			now only needs to support 2 levels of nesting. Good enough for now! -->
+			<List listClassNames="mt-4 text-xl" listElement="ul">
+				{CloudflareLinks.map(({ data, link, text }: CloudflareLink) => {
+					if (data) {
+						return <List listClassNames="mt-4 text-xl" listElement="ul">
+								{data.map(({ link, text }: CloudflareLink) => {
+									return <li class="mt-8 ml-8">
+											<ExternalLink classNames="underline hover:text-yellow-700" linkText={text} link={link} />
+										</li>;
+								})}
+							</List>;
+					}
 
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/lukeed/cfw"
-						>cfw: Build and deploy utility for Cloudflare Workers</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/wilsonzlin/edgesearch"
-						>edgesearch: Serverless full-text search with Cloudflare Workers,
-						WebAssembly, and Roaring Bitmaps
-					</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/fauna-labs/fauna-workers"
-						>fauna-workers: Template for building fast, globally distributed
-						applications using Cloudflare Workers and Fauna</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://flareact.com/"
-						>Flareact: Edge-rendered React framework built for Cloudflare
-						Workers</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/kwhitley/itty-router"
-						>Itty Router: A little router</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/kwhitley/itty-router-extras"
-						>Itty Router Extras: An assortment of delicious extras for the
-						calorie-light itty-router</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://miniflare.dev"
-						>Miniflare: Fully-local simulator for Cloudflare Workers</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/Cherry/placeholders.dev"
-						>placeholders.dev: Generate custom placeholder images, powered by
-						Cloudflare Workers in 200+ edge locations</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://sunderjs.com/"
-						>Sunder: Minimal and unopinionated framework for Service Workers</a>
-				</li>
-
-				<li class="mt-8">
-					<a
-						class="underline hover:text-yellow-700"
-						href="https://github.com/lukeed/worktop"
-						>Worktop: Next generation web framework for Cloudflare Workers
-					</a>
-				</li>
-			</ul>
+					return <li class="mt-8">
+							<ExternalLink classNames="underline hover:text-yellow-700" linkText={text} link={link} />
+						</li>;
+				})}
+			</List>
 		</main>
 	</body>
 </html>

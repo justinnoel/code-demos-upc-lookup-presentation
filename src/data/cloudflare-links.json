@@ -1,0 +1,46 @@
+[
+	{
+		"link": "https://developers.cloudflare.com/workers/cli-wrangler",
+		"text": "Wrangler: Cloudflare CLI for interfacing with Cloudflare Workersand KV"
+	},
+	{
+		"link": "https://github.com/lukeed/cfw",
+		"text": "cfw: Build and deploy utility for Cloudflare Workers"
+	},
+	{
+		"link": "https://github.com/wilsonzlin/edgesearch",
+		"text": "edgesearch: Serverless full-text search with Cloudflare Workers,WebAssembly, and Roaring Bitmaps"
+	},
+	{
+		"link": "https://github.com/fauna-labs/fauna-workers",
+		"text": "fauna-workers: Template for building fast, globally distributedapplications using Cloudflare Workers and Fauna"
+	},
+	{
+		"link": "https://flareact.com/",
+		"text": "Flareact: Edge-rendered React framework built for CloudflareWorkers"
+	},
+	{
+		"link": "https://github.com/kwhitley/itty-router",
+		"text": "Itty Router: A little router"
+	},
+	{
+		"link": "https://github.com/kwhitley/itty-router-extras",
+		"text": "Itty Router Extras: An assortment of delicious extras for thecalorie-light itty-router"
+	},
+	{
+		"link": "https://miniflare.dev",
+		"text": "Miniflare: Fully-local simulator for Cloudflare Workers"
+	},
+	{
+		"link": "https://github.com/Cherry/placeholders.dev",
+		"text": "placeholders.dev: Generate custom placeholder images, powered byCloudflare Workers in 200+ edge locations"
+	},
+	{
+		"link": "https://sunderjs.com/",
+		"text": "Sunder: Minimal and unopinionated framework for Service Workers"
+	},
+	{
+		"link": "https://github.com/lukeed/worktop",
+		"text": "Worktop: Next generation web framework for Cloudflare Workers"
+	}
+]

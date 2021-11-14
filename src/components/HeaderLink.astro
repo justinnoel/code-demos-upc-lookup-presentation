@@ -1,0 +1,24 @@
+---
+export interface Props {
+	classNames: string;
+	headerElement: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+	id: string;
+	text: string;
+}
+
+const { classNames, headerElement, id, text } = Astro.props as Props;
+---
+
+{`<${headerElement} class="${classNames}">`}
+<a
+	{id}
+	href={id.startsWith("/") ? id : `#${id}`}
+	aria-hidden="true"
+	class="group">
+	<img
+		alt=""
+		class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
+		src="../assets/img/link.svg" />
+	{text}
+</a>
+{`</${headerElement}>`}

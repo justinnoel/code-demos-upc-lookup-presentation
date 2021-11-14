@@ -1,5 +1,6 @@
 ---
 import BaseHead from "../../components/BaseHead.astro";
+import HeaderLink from "../../components/HeaderLink.astro";
 import SlideHeader from "../../components/SlideHeader.astro";
 
 const title = "UPC Lookup Service";
@@ -17,7 +18,12 @@ const permalink =
 	<body class=" text-gray-700 mx-auto max-w-6xl">
 		<SlideHeader />
 		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
-			<h1 class="text-6xl">What We're Building</h1>
+			<HeaderLink
+				classNames="mt-8 text-6xl"
+				headerElement="h1"
+				id="/slides/what-we-are-building"
+				text="What We're Building" />
+
 			<p class="mt-8 text-2xl">
 				Today we're going to build a simple (fake) UPC lookup service. The user
 				will enter a UPC barcode value to get information about the grocery

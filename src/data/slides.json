@@ -25,9 +25,9 @@
 	},
 	{
 		"id": 4,
-		"title": "Worker KV Demo",
+		"title": "Worker Demo",
 		"previewText": "Create a simple worker that responds to requests by returning the name of the current visitor or the names of all previous visitors.",
-		"linkText": "worker-kv-demo"
+		"linkText": "worker-demo"
 	},
 	{
 		"id": 5,

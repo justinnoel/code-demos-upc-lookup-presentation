@@ -1,5 +1,7 @@
 ---
 import BaseHead from "../../components/BaseHead.astro";
+import ExternalLink from "../../components/ExternalLink.astro";
+import HeaderLink from "../../components/HeaderLink.astro";
 import SlideHeader from "../../components/SlideHeader.astro";
 import WorkerNameDemo from "../../components/WorkerNameDemo.astro";
 
@@ -18,15 +20,29 @@ const permalink =
 	<body class=" text-gray-700 mx-auto max-w-6xl mb-32">
 		<SlideHeader />
 		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
-			<h1 class="text-6xl">Worker Demo</h1>
+			<HeaderLink
+				classNames="mt-8 text-6xl"
+				headerElement="h1"
+				id="/slides/worker-demo"
+				text="Cloudflare Worker Demo" />
 			<p class="mt-8 text-2xl">
 				The code samples below demonstrates how a Cloudflare Worker can accept
-				HTTP requests, store and retrieve data from KV, and respond.
+				HTTP requests, store and retrieve data from KV, and respond to the
+				request.
 			</p>
 
-			<h2 class="mt-8 text-4xl">Storing Data in KV</h2>
+			<HeaderLink
+				classNames="mt-8 text-4xl"
+				headerElement="h2"
+				id="storing-data-in-kv"
+				text="Storing Data in KV" />
 			<pre
-				class="mt-8 text-xs ml-8 italic">Presenter: <a href="https://dash.cloudflare.com/0b54413ee8be2adb60827633bb1779fc/workers/edit/hello-name-kv-demo">Worker Demo on Cloudflare Dashboard</a></pre>
+				class="mt-8 text-xs ml-8 italic">Presenters Link to Sample On Dashboard: 
+					<ExternalLink
+					classNames=""
+					link="https://dash.cloudflare.com/0b54413ee8be2adb60827633bb1779fc/workers/edit/hello-name-kv-demo"
+					linkText="Worker Demo on Cloudflare Dashboard" />
+				</pre>
 
 			<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
 				<WorkerNameDemo />
@@ -35,7 +51,12 @@ const permalink =
 			<p class="mt-8 text-2xl">Please visit this link in your browser:</p>
 
 			<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
-				<pre>ttps://hello-name-kv-demo.justin-cftemp.workers.dev/greeting/!!!!!!_REPLACE_THIS_WITH_YOUR_NAME_!!!!!!</pre>
+				<p class="text-lg mb-8">
+					<span class="font-bold">NOTE:</span> Please use your name instead of the
+					placeholder
+				</p>
+				<!-- NOTE: This is intentionally not linked to force user to change the name -->
+				<pre>https://hello-name-kv-demo.justin-cftemp.workers.dev/greeting/!!!YOUR_NAME_HERE!!!</pre>
 			</div>
 
 			<p class="mt-8 text-2xl">
@@ -44,11 +65,20 @@ const permalink =
 
 			<hr class="mt-16 mx-4 text-gray-300" />
 
-			<h2 id="pages" class="mt-8 text-4xl">Fetching Data from KV</h2>
+			<HeaderLink
+				classNames="mt-8 text-4xl"
+				headerElement="h2"
+				id="pages"
+				text="Fetching Data from KV" />
 			<p class="mt-8 text-2xl">Now, visit this link in your browser:</p>
 
 			<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
-				<pre>https://hello-name-kv-demo.justin-cftemp.workers.dev/visitors/</pre>
+				<pre>
+				<ExternalLink
+					classNames=""
+					link="https://hello-name-kv-demo.justin-cftemp.workers.dev/visitors/"
+					linkText="https://hello-name-kv-demo.justin-cftemp.workers.dev/visitors/" />
+			</pre>
 			</div>
 
 			<p class="mt-8 text-2xl">
@@ -64,7 +94,11 @@ const permalink =
 
 			<hr class="mt-16 mx-4 text-gray-300" />
 
-			<h2 class="mt-8 text-4xl">Accessing KV Data with Wrangler CLI</h2>
+			<HeaderLink
+				classNames="mt-8 text-4xl"
+				headerElement="h2"
+				id="accessing-kv-data-wrangler-cli"
+				text="Accessing KV Data with Wrangler CLI" />
 			<p class="mt-8 text-2xl">
 				A developer can view the data stored in KV in the browser (😩) with the
 				KV API or the Wrangler CLI.
@@ -86,7 +120,11 @@ const permalink =
 
 			<hr class="mt-16 mx-4 text-gray-300" />
 
-			<h2 class="mt-8 text-4xl">Deleting Data with Wrangler CLI</h2>
+			<HeaderLink
+				classNames="mt-8 text-4xl"
+				headerElement="h2"
+				id="deleting-kv-data-wrangler-cli"
+				text="Deleting KV Data with Wrangler CLI" />
 			<p class="mt-8 text-2xl">
 				Deleting data can be done in the browser, one at a time via the CLI or
 				in bulk with a special file of key/value pairs.

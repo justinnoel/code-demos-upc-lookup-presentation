@@ -1,8 +1,9 @@
 ---
 import BaseHead from "../../components/BaseHead.astro";
-import SlideHeader from "../../components/SlideHeader.astro";
 import ExternalLink from "../../components/ExternalLink.astro";
+import HeaderLink from "../../components/HeaderLink.astro";
 import List from "../../components/List.astro";
+import SlideHeader from "../../components/SlideHeader.astro";
 
 type AstroLink = {
 	link: string;
@@ -26,26 +27,27 @@ const permalink = "https://upc-lookup-presentation.codedemos.dev/astro";
 	<body class=" text-gray-700 mx-auto max-w-6xl mb-32">
 		<SlideHeader />
 		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
-			<h1 class="mt-8 text-6xl">Astro</h1>
+			<HeaderLink
+				classNames="mt-8 text-6xl"
+				headerElement="h1"
+				id="/slides/astro"
+				text="Astro" />
 
 			<p class="mt-8 text-2xl">
-				<a
-					class="underline hover:text-yellow-700"
-					href="https://astro.build"
-					target="_blank"
-					rel="noopener noreferrer">Astro</a> is one of many Static Site Generators
-				(SSG) developers can choose from today.
+				<ExternalLink
+					classNames="underline hover:text-yellow-700"
+					linkText="Astro"
+					link="https://astro.build" />
+				is one of many Static Site Generators (SSG) developers can choose from today.
 			</p>
 
-			<h2 class="mt-8 text-4xl">
-				<a id="concepts" href="#concepts" aria-hidden="true" class="group">
-					<img
-						alt=""
-						class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
-						src="../assets/img/link.svg" />
-					Concepts
-				</a>
-			</h2>
+			<hr class="mt-16 mx-4 text-gray-300" />
+
+			<HeaderLink
+				classNames="mt-8 text-4xl"
+				headerElement="h2"
+				id="concepts"
+				text="Concepts" />
 			<ul class="mt-8 text-xl">
 				<li class="mt-6 ml-6">
 					<p class="text-xl">
@@ -55,11 +57,10 @@ const permalink = "https://upc-lookup-presentation.codedemos.dev/astro";
 
 				<li class="mt-6 ml-6">
 					<p class="text-xl">
-						<a
-							class="underline hover:text-yellow-700"
-							href="https://jasonformat.com/islands-architecture/"
-							target="_blank"
-							rel="noopener noreferrer">Islands Architecture</a>
+						<ExternalLink
+							classNames="underline hover:text-yellow-700"
+							linkText="Islands Architecture"
+							link="https://jasonformat.com/islands-architecture/" />
 					</p>
 				</li>
 			</ul>
@@ -77,20 +78,11 @@ const permalink = "https://upc-lookup-presentation.codedemos.dev/astro";
 
 			<hr class="mt-16 mx-4 text-gray-300" />
 
-			<h2 class="mt-8 text-4xl">
-				<a
-					id="use-any-javascript-framework"
-					href="#use-any-javascript-framework"
-					aria-hidden="true"
-					class="group">
-					<img
-						alt=""
-						class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
-						src="../assets/img/link.svg" />
-					Use Any JavaScript or Framework with Built-in TypeScript Support
-				</a>
-			</h2>
-
+			<HeaderLink
+				classNames="mt-8 text-4xl"
+				headerElement="h2"
+				id="use-any-javascript-framework"
+				text="Use Any JavaScript or Framework with Built-in TypeScript Support" />
 			<ul class="mt-8 text-xl">
 				<li class="mt-6 ml-6">
 					<p class="text-xl">Vanilla JS - FTW!</p>
@@ -126,19 +118,11 @@ const permalink = "https://upc-lookup-presentation.codedemos.dev/astro";
 
 			<hr class="mt-16 mx-4 text-gray-300" />
 
-			<h2 class="mt-8 text-4xl">
-				<a
-					id="astro-ecosystem"
-					href="#astro-ecosystem"
-					aria-hidden="true"
-					class="group">
-					<img
-						alt=""
-						class="relative max-h-6 -left-8 top-8 invisible group-hover:visible"
-						src="../assets/img/link.svg" />
-					Astro Ecosystem
-				</a>
-			</h2>
+			<HeaderLink
+				classNames="mt-8 text-4xl"
+				headerElement="h2"
+				id="astro-ecosystem"
+				text="Astro Ecosystem" />
 
 			<p class="mt-8 text-2xl">
 				The Astro Discord server is very active with a diverse group of core
