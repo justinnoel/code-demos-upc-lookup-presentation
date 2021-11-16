@@ -1,21 +1,39 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import SlideHeader from "../components/SlideHeader.astro";
-import Slide from "../components/Slide.astro";
+// @ts-ignore
+import { SEO } from "astro-seo";
+import { ComponentChildren } from "preact";
 
-const { content } = Astro.props;
-const { title, description, publishDate, heroImage, permalink, alt } = content;
+// import { SlideType } from "../types/presentation";
+
+import Navigation from "../components/Navigation.astro";
+
+export interface Props {
+	// nextSlide?: SlideType;
+	// previousSlide?: SlideType;
+	nextSlide?: any;
+	previousSlide?: any;
+	children: ComponentChildren;
+}
+
+const { nextSlide, previousSlide } = Astro.props as Props;
 ---
 
-<html lang={content.lang || "en"}>
+<html lang="en">
 	<head>
-		<BaseHead {title} {description} {permalink} />
+		<SEO
+			title="A Very Descriptive Title"
+			description="A heavily optimized description full of well-researched keywords."
+		/>
+		<meta charSet="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="stylesheet" href={Astro.resolve("../assets/global.css")} />
 	</head>
 
-	<body>
-		<SlideHeader />
-		<Slide {title} {heroImage} {publishDate} {alt}>
+	<body class="mx-auto max-w-6xl text-gray-700 h-full">
+		<Navigation {nextSlide} {previousSlide} />
+		<main class="px-8 full-minus-nav">
 			<slot />
-		</Slide>
+		</main>
 	</body>
 </html>

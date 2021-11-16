@@ -1,30 +1,74 @@
 ---
-// TODO: Why don't SlideType typings work. Everything says "any"
-// import { SlideType } from "../presentation.d.ts";
-import BaseHead from "../components/BaseHead.astro";
-import SlideHeader from "../components/SlideHeader.astro";
-import SlidePreview from "../components/SlidePreview.astro";
-
-const title = "UPC Lookup Service with Astro &amp; Cloudflare";
-const description =
-	'How to use Astro and Cloudflare to build and host amazing "serverless" projects.';
-const permalink = "https://upc-lookup-presentation.codedemos.dev/";
+import PresentationLayout from "../layouts/Presentation.astro";
 
 import slides from "../data/slides.json";
+const title = "Create a UPC Lookup Service with Astro and Cloudflare.";
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead {title} {description} {permalink} />
-	</head>
+<PresentationLayout nextSlide={slides[0]}>
+	<div
+		class="lg:hidden flex flex-col full-minus-nav justify-between p-2 sm:p-8"
+	>
+		<h1 class="mb-8 text-2xl text-center">{title}</h1>
+		<h2 class="sr-only">
+			Astro Static Site Generator plus Cloudflare tools give you developer super
+			powers.
+		</h2>
+		<img
+			alt="Astro rocket logo"
+			class="max-h-28 md:max-h-56 block"
+			src={Astro.resolve("../assets/astro.svg")}
+		/>
+		<img
+			alt="Plus symbol"
+			class="max-h-12 md:max-h-32 block"
+			src={Astro.resolve("../assets/streamline-icon-add.svg")}
+		/>
+		<img
+			alt="Cloudflare logo"
+			class="max-h-16 md:max-h-48 block"
+			src={Astro.resolve("../assets/cf-logo-v.svg")}
+		/>
+		<img
+			alt="Equal symbol"
+			class="max-h-12 md:max-h-32 block"
+			src={Astro.resolve("../assets/streamline-icon-symbol-equal.svg")}
+		/>
+		<img
+			alt="Person with a rocket pack and goggles shooting into the clouds."
+			class="max-h-72 md:max-h-96 block"
+			src={Astro.resolve("../assets/streamline-icon-speed.svg")}
+		/>
+	</div>
 
-	<body class=" text-gray-700 mx-auto max-w-6xl">
-		<SlideHeader element="h1" />
-		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
-			<article aria-label="Presentation slides list">
-				<!-- {slides.map((slide: SlideType) => <SlidePreview slide={slide} />)} -->
-				{slides.map((slide) => <SlidePreview slide={slide} />)}
-			</article>
-		</main>
-	</body>
-</html>
+	<div class="hidden lg:flex flex-col full-minus-nav justify-between p-8">
+		<h1 class="text-4xl text-center">{title}</h1>
+		<div class="mt-8 lg:flex justify-between w-full">
+			<img
+				alt="Astro rocket logo"
+				class="lg:max-h-48"
+				src={Astro.resolve("../assets/astro.svg")}
+			/>
+			<img
+				alt="Plus symbol"
+				class="lg:max-h-32"
+				src={Astro.resolve("../assets/streamline-icon-add.svg")}
+			/>
+			<img
+				alt="Equal symbol"
+				class="lg:max-h-48"
+				src={Astro.resolve("../assets/cf-logo-v.svg")}
+			/>
+		</div>
+		<img
+			alt="Cloudflare logo"
+			class="lg:max-h-32 block"
+			src={Astro.resolve("../assets/streamline-icon-symbol-equal.svg")}
+		/>
+		<img
+			alt="Person with a rocket pack and goggles shooting into the clouds."
+			class="max-h-96 lg:max-h-96 block"
+			src={Astro.resolve("../assets/streamline-icon-speed.svg")}
+		/>
+	</div>
+</PresentationLayout>

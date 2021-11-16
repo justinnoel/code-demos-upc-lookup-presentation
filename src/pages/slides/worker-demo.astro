@@ -1,140 +1,122 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
+import PresentationLayout from "../../layouts/Presentation.astro";
 import ExternalLink from "../../components/ExternalLink.astro";
 import HeaderLink from "../../components/HeaderLink.astro";
-import SlideHeader from "../../components/SlideHeader.astro";
 import WorkerNameDemo from "../../components/WorkerNameDemo.astro";
-
-const title = "Worker KV Demo";
-const description =
-	"Demonstrate how to build a Cloudflare Worker in the browser";
-const permalink =
-	"https://upc-lookup-presentation.codedemos.dev/worker-kv-demo";
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead {title} {description} {permalink} />
-	</head>
+<PresentationLayout>
+	<HeaderLink
+		classNames="mt-8 text-6xl"
+		headerElement="h1"
+		id="/slides/worker-demo"
+		text="Cloudflare Worker Demo" />
+	<p class="mt-8 text-2xl">
+		The code samples below demonstrates how a Cloudflare Worker can accept HTTP
+		requests, store and retrieve data from KV, and respond to the request.
+	</p>
 
-	<body class=" text-gray-700 mx-auto max-w-6xl mb-32">
-		<SlideHeader />
-		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
-			<HeaderLink
-				classNames="mt-8 text-6xl"
-				headerElement="h1"
-				id="/slides/worker-demo"
-				text="Cloudflare Worker Demo" />
-			<p class="mt-8 text-2xl">
-				The code samples below demonstrates how a Cloudflare Worker can accept
-				HTTP requests, store and retrieve data from KV, and respond to the
-				request.
-			</p>
-
-			<HeaderLink
-				classNames="mt-8 text-4xl"
-				headerElement="h2"
-				id="storing-data-in-kv"
-				text="Storing Data in KV" />
-			<pre
-				class="mt-8 text-xs ml-8 italic">Presenters Link to Sample On Dashboard: 
+	<HeaderLink
+		classNames="mt-8 text-4xl"
+		headerElement="h2"
+		id="storing-data-in-kv"
+		text="Storing Data in KV" />
+	<pre
+		class="mt-8 text-xs ml-8 italic">Presenters Link to Sample On Dashboard: 
 					<ExternalLink
 					classNames=""
 					link="https://dash.cloudflare.com/0b54413ee8be2adb60827633bb1779fc/workers/edit/hello-name-kv-demo"
 					linkText="Worker Demo on Cloudflare Dashboard" />
 				</pre>
 
-			<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
-				<WorkerNameDemo />
-			</div>
+	<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
+		<WorkerNameDemo />
+	</div>
 
-			<p class="mt-8 text-2xl">Please visit this link in your browser:</p>
+	<p class="mt-8 text-2xl">Please visit this link in your browser:</p>
 
-			<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
-				<p class="text-lg mb-8">
-					<span class="font-bold">NOTE:</span> Please use your name instead of the
-					placeholder
-				</p>
-				<!-- NOTE: This is intentionally not linked to force user to change the name -->
-				<pre>https://hello-name-kv-demo.justin-cftemp.workers.dev/greeting/!!!YOUR_NAME_HERE!!!</pre>
-			</div>
+	<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
+		<p class="text-lg mb-8">
+			<span class="font-bold">NOTE:</span> Please use your name instead of the placeholder
+		</p>
+		<!-- NOTE: This is intentionally not linked to force user to change the name -->
+		<pre>https://hello-name-kv-demo.justin-cftemp.workers.dev/greeting/!!!YOUR_NAME_HERE!!!</pre>
+	</div>
 
-			<p class="mt-8 text-2xl">
-				The Cloudflare Worker should respond with a greeting to you.
-			</p>
+	<p class="mt-8 text-2xl">
+		The Cloudflare Worker should respond with a greeting to you.
+	</p>
 
-			<hr class="mt-16 mx-4 text-gray-300" />
+	<hr class="mt-16 mx-4 text-gray-300" />
 
-			<HeaderLink
-				classNames="mt-8 text-4xl"
-				headerElement="h2"
-				id="pages"
-				text="Fetching Data from KV" />
-			<p class="mt-8 text-2xl">Now, visit this link in your browser:</p>
+	<HeaderLink
+		classNames="mt-8 text-4xl"
+		headerElement="h2"
+		id="pages"
+		text="Fetching Data from KV" />
+	<p class="mt-8 text-2xl">Now, visit this link in your browser:</p>
 
-			<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
-				<pre>
+	<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
+		<pre>
 				<ExternalLink
 					classNames=""
 					link="https://hello-name-kv-demo.justin-cftemp.workers.dev/visitors/"
 					linkText="https://hello-name-kv-demo.justin-cftemp.workers.dev/visitors/" />
 			</pre>
-			</div>
+	</div>
 
-			<p class="mt-8 text-2xl">
-				The Cloudflare Worker should respond with a list of all the visitors
-				that have been received.
-			</p>
+	<p class="mt-8 text-2xl">
+		The Cloudflare Worker should respond with a list of all the visitors that
+		have been received.
+	</p>
 
-			<p class="mt-8 text-2xl">
-				Notice that it may not instantly return the most recent visitors. Again,
-				this is because KV is eventually consistent. In addition, queries from
-				the KV have a 60 second default cache.
-			</p>
+	<p class="mt-8 text-2xl">
+		Notice that it may not instantly return the most recent visitors. Again,
+		this is because KV is eventually consistent. In addition, queries from the
+		KV have a 60 second default cache.
+	</p>
 
-			<hr class="mt-16 mx-4 text-gray-300" />
+	<hr class="mt-16 mx-4 text-gray-300" />
 
-			<HeaderLink
-				classNames="mt-8 text-4xl"
-				headerElement="h2"
-				id="accessing-kv-data-wrangler-cli"
-				text="Accessing KV Data with Wrangler CLI" />
-			<p class="mt-8 text-2xl">
-				A developer can view the data stored in KV in the browser (😩) with the
-				KV API or the Wrangler CLI.
-			</p>
+	<HeaderLink
+		classNames="mt-8 text-4xl"
+		headerElement="h2"
+		id="accessing-kv-data-wrangler-cli"
+		text="Accessing KV Data with Wrangler CLI" />
+	<p class="mt-8 text-2xl">
+		A developer can view the data stored in KV in the browser (😩) with the KV
+		API or the Wrangler CLI.
+	</p>
 
-			<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
-				<code
-					>wrangler kv:key list --namespace-id=240bcf8037a740e6a4320293b8d64329
-					| jq "."</code>
-			</div>
+	<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
+		<code
+			>wrangler kv:key list --namespace-id=240bcf8037a740e6a4320293b8d64329 | jq
+			"."</code>
+	</div>
 
-			<p class="mt-8 text-2xl">
-				This data can be piped to a file for further review/backup.
-			</p>
+	<p class="mt-8 text-2xl">
+		This data can be piped to a file for further review/backup.
+	</p>
 
-			<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
-				<code> ... previous command + " &gt hello_kv_demo_data.json"</code>
-			</div>
+	<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
+		<code> ... previous command + " &gt hello_kv_demo_data.json"</code>
+	</div>
 
-			<hr class="mt-16 mx-4 text-gray-300" />
+	<hr class="mt-16 mx-4 text-gray-300" />
 
-			<HeaderLink
-				classNames="mt-8 text-4xl"
-				headerElement="h2"
-				id="deleting-kv-data-wrangler-cli"
-				text="Deleting KV Data with Wrangler CLI" />
-			<p class="mt-8 text-2xl">
-				Deleting data can be done in the browser, one at a time via the CLI or
-				in bulk with a special file of key/value pairs.
-			</p>
+	<HeaderLink
+		classNames="mt-8 text-4xl"
+		headerElement="h2"
+		id="deleting-kv-data-wrangler-cli"
+		text="Deleting KV Data with Wrangler CLI" />
+	<p class="mt-8 text-2xl">
+		Deleting data can be done in the browser, one at a time via the CLI or in
+		bulk with a special file of key/value pairs.
+	</p>
 
-			<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
-				<code
-					>wrangler kv:key delete
-					--namespace-id=240bcf8037a740e6a4320293b8d64329 "Neil_1636508237650"</code>
-			</div>
-		</main>
-	</body>
-</html>
+	<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
+		<code
+			>wrangler kv:key delete --namespace-id=240bcf8037a740e6a4320293b8d64329
+			"Neil_1636508237650"</code>
+	</div>
+</PresentationLayout>

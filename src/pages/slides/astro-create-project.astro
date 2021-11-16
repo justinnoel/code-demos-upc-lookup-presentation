@@ -1,141 +1,126 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
+import PresentationLayout from "../../layouts/Presentation.astro";
 import ExternalLink from "../../components/ExternalLink.astro";
-import SlideHeader from "../../components/SlideHeader.astro";
 import HeaderLink from "../../components/HeaderLink.astro";
-
-const title = "Convert Project to Astro";
-const description = "Convert a plain HTML project into an Astro project.";
-const permalink =
-	"https://upc-lookup-presentation.codedemos.dev/astro-create-project";
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead {title} {description} {permalink} />
-	</head>
+<PresentationLayout>
+	<HeaderLink
+		classNames="mt-8 text-4xl"
+		headerElement="h1"
+		id="/slides/astro-create-project"
+		text="Plain HTML to Astro" />
+	<p class="mt-8 text-2xl">
+		Our project starts with a simple HTML page that has been pushed to Github.
+		We'll step through converting it into an Astro project.
+	</p>
 
-	<body class=" text-gray-700 mx-auto max-w-6xl mb-32">
-		<SlideHeader />
-		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
-			<HeaderLink
-				classNames="mt-8 text-4xl"
-				headerElement="h1"
-				id="/slides/astro-create-project"
-				text="Plain HTML to Astro" />
-			<p class="mt-8 text-2xl">
-				Our project starts with a simple HTML page that has been pushed to
-				Github. We'll step through converting it into an Astro project.
-			</p>
+	<HeaderLink
+		classNames="mt-8 text-4xl"
+		headerElement="h2"
+		id="start-as-html"
+		text="Start with a Bare Bones HTML Page" />
 
-			<HeaderLink
-				classNames="mt-8 text-4xl"
-				headerElement="h2"
-				id="start-as-html"
-				text="Start with a Bare Bones HTML Page" />
+	<p class="mt-8 text-2xl">
+		A Cloudflare Pages project has been created on for this Github repo. Now,
+		every time any branch in this repo gets modified, Cloudflare will rebuild
+		it.
+	</p>
 
-			<p class="mt-8 text-2xl">
-				A Cloudflare Pages project has been created on for this Github repo.
-				Now, every time any branch in this repo gets modified, Cloudflare will
-				rebuild it.
-			</p>
+	<p class="mt-8 text-2xl">
+		Changes to the "main" branch will be published to the "production" URL.
+	</p>
 
-			<p class="mt-8 text-2xl">
-				Changes to the "main" branch will be published to the "production" URL.
-			</p>
+	<p class="my-8 text-2xl">Original Version Links</p>
 
-			<p class="my-8 text-2xl">Original Version Links</p>
+	<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			classNames="underline hover:text-yellow-700"
+			linkText="Github (main branch)"
+			link="https://github.com/justinnoel/code-demos-upc-lookup-front-end/tree/main" />
+	</div>
 
-			<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
-				<ExternalLink
-					classNames="underline hover:text-yellow-700"
-					linkText="Github (main branch)"
-					link="https://github.com/justinnoel/code-demos-upc-lookup-front-end/tree/main" />
-			</div>
+	<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			classNames="underline hover:text-yellow-700"
+			linkText="https://upc-lookup-frontend.codedemos.dev"
+			link="https://upc-lookup-frontend.codedemos.dev" />
+	</div>
 
-			<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
-				<ExternalLink
-					classNames="underline hover:text-yellow-700"
-					linkText="https://upc-lookup-frontend.codedemos.dev"
-					link="https://upc-lookup-frontend.codedemos.dev" />
-			</div>
+	<hr class="mt-16 mx-4 text-gray-300" />
 
-			<hr class="mt-16 mx-4 text-gray-300" />
+	<HeaderLink
+		classNames="mt-8 text-4xl"
+		headerElement="h2"
+		id="convert-to-astro"
+		text="Convert the Project to Astro" />
+	<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
+		<div>
+			<code>npm init astro --template framework-preact</code>
+		</div>
+		<div>
+			<code>yarn</code>
+		</div>
+		<div>
+			<code>yarn dev</code>
+		</div>
+	</div>
 
-			<HeaderLink
-				classNames="mt-8 text-4xl"
-				headerElement="h2"
-				id="convert-to-astro"
-				text="Convert the Project to Astro" />
-			<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
-				<div>
-					<code>npm init astro --template framework-preact</code>
-				</div>
-				<div>
-					<code>yarn</code>
-				</div>
-				<div>
-					<code>yarn dev</code>
-				</div>
-			</div>
+	<p class="my-8 text-2xl">
+		<span class="font-bold">NOTE:</span> I've modified it just slightly for this
+		presentation
+	</p>
 
-			<p class="my-8 text-2xl">
-				<span class="font-bold">NOTE:</span> I've modified it just slightly for this
-				presentation
-			</p>
+	<p class="mt-8 text-2xl">
+		Changes to any branch other than "main" will be published to a unique
+		preview URL.
+	</p>
 
-			<p class="mt-8 text-2xl">
-				Changes to any branch other than "main" will be published to a unique
-				preview URL.
-			</p>
+	<p class="my-8 text-2xl">Astro-ized Version Links</p>
 
-			<p class="my-8 text-2xl">Astro-ized Version Links</p>
+	<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			classNames="underline hover:text-yellow-700"
+			linkText="Github ( feat/add-astro-to-project branch)"
+			link="https://github.com/justinnoel/code-demos-upc-lookup-front-end/tree/feat/add-astro-to-project" />
+	</div>
 
-			<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
-				<ExternalLink
-					classNames="underline hover:text-yellow-700"
-					linkText="Github ( feat/add-astro-to-project branch)"
-					link="https://github.com/justinnoel/code-demos-upc-lookup-front-end/tree/feat/add-astro-to-project" />
-			</div>
+	<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			classNames="underline hover:text-yellow-700"
+			linkText="https://344d59a7.code-demos-upc-lookup-front-end.pages.dev"
+			link="https://344d59a7.code-demos-upc-lookup-front-end.pages.dev" />
+	</div>
 
-			<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
-				<ExternalLink
-					classNames="underline hover:text-yellow-700"
-					linkText="https://344d59a7.code-demos-upc-lookup-front-end.pages.dev"
-					link="https://344d59a7.code-demos-upc-lookup-front-end.pages.dev" />
-			</div>
+	<hr class="mt-16 mx-4 text-gray-300" />
 
-			<hr class="mt-16 mx-4 text-gray-300" />
+	<HeaderLink
+		classNames="mt-8 text-4xl"
+		headerElement="h2"
+		id="add-upc-lookup-interface"
+		text="Add the UPC Lookup Interface" />
+	<h2 class="mt-8 text-4xl"></h2>
 
-			<HeaderLink
-				classNames="mt-8 text-4xl"
-				headerElement="h2"
-				id="add-upc-lookup-interface"
-				text="Add the UPC Lookup Interface" />
-			<h2 class="mt-8 text-4xl"></h2>
+	<p class="mt-8 text-2xl">
+		I've thrown a really quick UI into the code to demonstrate how Astro can
+		handle all the typical React(Preact) type functions, hooks, etc.
+	</p>
 
-			<p class="mt-8 text-2xl">
-				I've thrown a really quick UI into the code to demonstrate how Astro can
-				handle all the typical React(Preact) type functions, hooks, etc.
-			</p>
+	<p class="mt-8 text-2xl">I'm no designer - sue me!</p>
 
-			<p class="mt-8 text-2xl">I'm no designer - sue me!</p>
+	<p class="my-8 text-2xl">UPC Looking Links</p>
 
-			<p class="my-8 text-2xl">UPC Looking Links</p>
+	<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			classNames="underline hover:text-yellow-700"
+			linkText="Github ( feat/add-upc-lookup-ui branch)"
+			link="https://github.com/justinnoel/code-demos-upc-lookup-front-end/tree/feat/add-upc-lookup-ui" />
+	</div>
 
-			<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
-				<ExternalLink
-					classNames="underline hover:text-yellow-700"
-					linkText="Github ( feat/add-upc-lookup-ui branch)"
-					link="https://github.com/justinnoel/code-demos-upc-lookup-front-end/tree/feat/add-upc-lookup-ui" />
-			</div>
-
-			<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
-				<ExternalLink
-					classNames="underline hover:text-yellow-700"
-					linkText="https://dd734c2f.code-demos-upc-lookup-front-end.pages.dev/"
-					link="https://dd734c2f.code-demos-upc-lookup-front-end.pages.dev/" />
-			</div>
-		</main>
-	</body>
-</html>
+	<div class="mt-8 text-2xl mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			classNames="underline hover:text-yellow-700"
+			linkText="https://dd734c2f.code-demos-upc-lookup-front-end.pages.dev/"
+			link="https://dd734c2f.code-demos-upc-lookup-front-end.pages.dev/" />
+	</div>
+</PresentationLayout>

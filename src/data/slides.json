@@ -1,7 +1,13 @@
 [
 	{
+		"id": 0,
+		"title": "Overview",
+		"previewText": "Overview of presentation on Astro and Cloudflare",
+		"linkText": "overview"
+	},
+	{
 		"id": 1,
-		"title": "About Me",
+		"title": "About Justin",
 		"previewText": "Who is this Justin Noel guy?",
 		"linkText": "about-justin-noel"
 	},

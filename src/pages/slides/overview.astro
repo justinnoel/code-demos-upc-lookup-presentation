@@ -1,0 +1,12 @@
+---
+import PresentationLayout from "../../layouts/Presentation.astro";
+
+import SlidePreview from "../../components/SlidePreview.astro";
+import slides from "../../data/slides.json";
+---
+
+<PresentationLayout>
+	<article aria-label="Presentation slides list">
+		{slides.map((slide) => <SlidePreview slide={slide} />)}
+	</article>
+</PresentationLayout>

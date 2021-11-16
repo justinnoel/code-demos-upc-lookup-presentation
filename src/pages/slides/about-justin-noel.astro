@@ -1,12 +1,6 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
-import SlideHeader from "../../components/SlideHeader.astro";
+import PresentationLayout from "../../layouts/Presentation.astro";
 import HeaderLink from "../../components/HeaderLink.astro";
-
-const title = "Justin Noel - Mobile Developer";
-const description =
-	"Justin Noel - Full stack capable web and mobile app developer";
-const permalink = "https://upc-lookup-presentation.codedemos.dev/about-me";
 
 const socialLinks = [
 	{
@@ -35,74 +29,65 @@ const skills = [
 ];
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead {title} {description} {permalink} />
-	</head>
+<PresentationLayout>
+	<HeaderLink
+		classNames="mt-8 text-4xl"
+		headerElement="h2"
+		id="about-justin-noel"
+		text="Cheesy 🧀 Bio Alert!" />
 
-	<body class=" text-gray-700 mx-auto max-w-6xl mb-32">
-		<SlideHeader />
-		<main class="px-8 mt-32 sm:mt-32 md:mt-16 mb-8">
-			<HeaderLink
-				classNames="mt-8 text-4xl"
-				headerElement="h2"
-				id="about-justin-noel"
-				text="Cheesy 🧀 Bio Alert!" />
+	<p class="mt-4 text-2xl">
+		In 2013, I left my boring enterprise developer position in the telecom ☎
+		industry to jump into the exciting world of mobile app 📱 development.
+	</p>
 
-			<p class="mt-4 text-2xl">
-				In 2013, I left my boring enterprise developer position in the telecom ☎
-				industry to jump into the exciting world of mobile app 📱 development.
-			</p>
+	<p class="mt-4 text-2xl">
+		Sadly, my own personal apps haven't made me rich <span class="not-sr-only"
+			>😢</span
+		>. To make ends meet, I've been an occasional contract mobile app developer
+		and worked for a major e-commerce company. Together with some great teams,
+		I've built mobile apps for several Fortune 100 companies.
+	</p>
 
-			<p class="mt-4 text-2xl">
-				Sadly, my own personal apps haven't made me rich <span
-					class="not-sr-only">😢</span
-				>. To make ends meet, I've been an occasional contract mobile app
-				developer and worked for a major e-commerce company. Together with some
-				great teams, I've built mobile apps for several Fortune 100 companies.
-			</p>
+	<p class="mt-4 text-2xl">
+		Now, I'm happily <span class="not-sr-only">😊</span> un(der)-employed and just
+		enjoying dabbling with lots of new tech 👨‍💻.
+	</p>
 
-			<p class="mt-4 text-2xl">
-				Now, I'm happily <span class="not-sr-only">😊</span> un(der)-employed and
-				just enjoying dabbling with lots of new tech 👨‍💻.
-			</p>
+	<hr class="mt-16 mx-4 text-gray-300" />
 
-			<hr class="mt-16 mx-4 text-gray-300" />
+	<HeaderLink
+		classNames="mt-8 text-4xl"
+		headerElement="h2"
+		id="available-for-hire"
+		text="Sorta Kinda Looking for Work" />
+	<p class="mt-4 text-2xl">
+		If you need a short-term contract developer, a part-time developer advocate <span
+			class="not-sr-only">🥑</span
+		>, have some heavy ETL to do, need some customer support help, or even want
+		to throw buckets <span class="not-sr-only">🪣</span> of money <span
+			class="not-sr-only">💰</span> at me to speak about your amazing <span
+			class="not-sr-only">😍</span> product at the hottest tech conference, please
+		reach out to me.
+	</p>
 
-			<HeaderLink
-				classNames="mt-8 text-4xl"
-				headerElement="h2"
-				id="available-for-hire"
-				text="Sorta Kinda Looking for Work" />
-			<p class="mt-4 text-2xl">
-				If you need a short-term contract developer, a part-time developer
-				advocate <span class="not-sr-only">🥑</span>, have some heavy ETL to do,
-				need some customer support help, or even want to throw buckets <span
-					class="not-sr-only">🪣</span> of money <span class="not-sr-only"
-					>💰</span> at me to speak about your amazing <span class="not-sr-only"
-					>😍</span> product at the hottest tech conference, please reach out to
-				me.
-			</p>
+	<h3 class="mt-12 text-3xl">Skills</h3>
+	<ul class="my-6">
+		{skills.map((skill) => <li class="mt-6 ml-6">
+				<p class="text-xl">{skill}</p>
+			</li>)}
+	</ul>
 
-			<h3 class="mt-12 text-3xl">Skills</h3>
-			<ul class="my-6">
-				{skills.map((skill) => <li class="mt-6 ml-6">
-						<p class="text-xl">{skill}</p>
-					</li>)}
-			</ul>
+	<hr class="mt-16 mx-4 text-gray-300" />
 
-			<hr class="mt-16 mx-4 text-gray-300" />
+	<h2 class="mt-12 text-4xl">Social Links</h2>
 
-			<h2 class="mt-12 text-4xl">Social Links</h2>
-
-			<ul class="my-6">
-				{socialLinks.map((social) => <li class="mt-6 ml-6">
-						<a href={social.link} target="_blank" rel="noopener noreferrer" class="flex underline hover:text-yellow-700">
-							<img src={social.icon} alt="" height="24" class="max-h-8 block" />
-							<p class="text-xl ml-8">{social.text}</p>
-						</a>
-					</li>)}
-			</ul>
-		</main>
-	</body>
-</html>
+	<ul class="my-6">
+		{socialLinks.map((social) => <li class="mt-6 ml-6">
+				<a href={social.link} target="_blank" rel="noopener noreferrer" class="flex underline hover:text-yellow-700">
+					<img src={social.icon} alt="" height="24" class="max-h-8 block" />
+					<p class="text-xl ml-8">{social.text}</p>
+				</a>
+			</li>)}
+	</ul>
+</PresentationLayout>

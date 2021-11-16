@@ -4,6 +4,10 @@
 		"text": "Wrangler: Cloudflare CLI for interfacing with Cloudflare Workersand KV"
 	},
 	{
+		"link": "https://github.com/eidam/cf-workers-status-page",
+		"text": "cf-workers-status-page: Monitor your websites, showcase status including daily history, and get Slack/Telegram/Discord notification whenever your website status changes. Using Cloudflare Workers, CRON Triggers, and KV storage."
+	},
+	{
 		"link": "https://github.com/lukeed/cfw",
 		"text": "cfw: Build and deploy utility for Cloudflare Workers"
 	},
@@ -38,6 +42,10 @@
 	{
 		"link": "https://sunderjs.com/",
 		"text": "Sunder: Minimal and unopinionated framework for Service Workers"
+	},
+	{
+		"link": "https://vitedge.js.org/",
+		"text": "Edge-side rendering and fullstack Vite framework"
 	},
 	{
 		"link": "https://github.com/lukeed/worktop",

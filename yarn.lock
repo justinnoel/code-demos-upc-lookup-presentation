@@ -1052,6 +1052,11 @@ astring@^1.7.4:
   resolved "https://registry.yarnpkg.com/astring/-/astring-1.7.5.tgz#a7d47fceaf32b052d33a3d07c511efeec67447ca"
   integrity sha512-lobf6RWXb8c4uZ7Mdq0U12efYmpD1UFnyOWVJPTa3ukqZrMopav+2hdNu0hgBF0JIBFK9QgrBDfwYvh3DFJDAA==
 
+astro-seo@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/astro-seo/-/astro-seo-0.4.2.tgz#0db97bd109831e77ae848e65422f94fb9c1bc66e"
+  integrity sha512-o5Jh3j81Iib4eB/x1S3/IG+qT7nbfXk2q+o95vh4XnNHswoW/VkhxPhTs42PkMzq69cJPcHaljaYb8PDMHSxfw==
+
 astro@^0.20.12:
   version "0.20.12"
   resolved "https://registry.yarnpkg.com/astro/-/astro-0.20.12.tgz#24f18e9fed95294b77606de3891d40d2852be1bd"
@@ -4602,10 +4607,10 @@ preact@^10.5.13:
   resolved "https://registry.yarnpkg.com/preact/-/preact-10.5.15.tgz#6df94d8afecf3f9e10a742fd8c362ddab464225f"
   integrity sha512-5chK29n6QcJc3m1lVrKQSQ+V7K1Gb8HeQY6FViQ5AxCAEGu3DaHffWNDkC9+miZgsLvbvU9rxbV1qinGHMHzqA==
 
-prettier-plugin-astro@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-astro/-/prettier-plugin-astro-0.0.9.tgz#83f2e090e78a20ceb53a75af7ef683ce63ad6e72"
-  integrity sha512-kDZzuTYaCu9xcD9HhHcswE3H1gh3hzh0Mhw233Fk7U0M6Tpw0ntX/KQ7bfUJzvbMkeh1EKo6L7db2c3/HJwitg==
+prettier-plugin-astro@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-astro/-/prettier-plugin-astro-0.0.10.tgz#bff6a60be702c08fcac8a144270a51055cbd3a20"
+  integrity sha512-+Q1g2G0r0u9JO/Mb3ApfsdxgTsIM8Tq2GO9xDpykVJHdlEJHPSeZr8MTpQqPaR9pBFy2rKDeB59flOlp6ktdTw==
   dependencies:
     "@astrojs/parser" "^0.20.2"
     prettier "^2.4.1"

@@ -12,10 +12,10 @@ const version1 = `<${element} class="hidden md:block mx-8 text-4xl">${title}</${
 const version2 = `<${element} class="md:hidden text-2xl">${title}</${element}>`;
 ---
 
-<header class="p-8 max-h-8">
+<header class="h-16">
 	<nav class="">
 		<a href="/">
-			<div class="flex align-center justify-start">
+			<!-- <div class="flex align-center justify-start ">
 				<img
 					src={Astro.resolve("../assets/astro-logo.gif")}
 					class="max-h-16"
@@ -26,7 +26,7 @@ const version2 = `<${element} class="md:hidden text-2xl">${title}</${element}>`;
 					alt="Cloudflare logo" />
 				{version1}
 			</div>
-			{version2}
+			{version2} -->
 		</a>
 	</nav>
 </header>
