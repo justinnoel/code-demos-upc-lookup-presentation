@@ -3,10 +3,14 @@ import PresentationLayout from "../../layouts/Presentation.astro";
 
 import SlidePreview from "../../components/SlidePreview.astro";
 import slides from "../../data/slides.json";
+
+// Don't need to display the very first slide
+const finalSlides = [...slides];
+finalSlides.shift();
 ---
 
 <PresentationLayout>
 	<article aria-label="Presentation slides list">
-		{slides.map((slide) => <SlidePreview slide={slide} />)}
+		{finalSlides.map((slide) => <SlidePreview slide={slide} />)}
 	</article>
 </PresentationLayout>
