@@ -15,121 +15,111 @@ type CloudflareLink = {
 
 <PresentationLayout>
 	<HeaderLink
-		classNames="mt-8 text-6xl"
+		classNames="h1-common"
 		headerElement="h1"
 		id="/slides/cloudflare"
-		text="Cloudflare" />
+		text="Cloudflare"
+	/>
 
-	<p class="mt-8 text-2xl">
-		<ExternalLink
-			classNames="underline hover:text-yellow-700"
-			linkText="Cloudflare"
-			link="https://cloudflare.com" />
+	<p class="p-common">
+		<ExternalLink linkText="Cloudflare" link="https://cloudflare.com" />
 		is widely known as a CDN and security service for the internet. They protect
 		millions of sites against DDoS and other attack vectors.
 	</p>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		Cloudflare also has a suite of tools for enterprises and developers to build
 		robust, automatically scaled, and low cost "serverless" applications.
 	</p>
 
-	<p class="mt-8 text-2xl">We'll be using the following Cloudflare services:</p>
+	<p class="p-common">We'll be using the following Cloudflare services:</p>
 
-	<hr class="mt-16 mx-4 text-gray-300" />
+	<hr class="hr-common" />
 
 	<HeaderLink
 		classNames="mt-8 text-4xl"
 		headerElement="h2"
 		id="pages"
-		text="Pages" />
+		text="Pages"
+	/>
 
-	<p class="mt-8 text-2xl">
-		<ExternalLink
-			classNames="underline hover:text-yellow-700"
-			linkText="Pages"
-			link="https://pages.cloudflare.com" />
+	<p class="p-common">
+		<ExternalLink linkText="Pages" link="https://pages.cloudflare.com" />
 		is currently a hosting service for static sites.
 	</p>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		Using GitHub integration (others Coming Soon<sup>TM</sup>), any changes made
 		on the "main" branch are automatically pushed to production. Changes on
 		other branches automatically get a "preview url".
 	</p>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		All of the published sites are cached across Cloudflare's entire network of
 		250+ points of presence across the global. If your visitor is in Mumbai,
 		India or Dallas, USA they will be served the content from the POP closest to
 		them with virtually no latency.
 	</p>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		There are rumors of adding "API" functionality within the Pages platform as
 		well. For now, see <a href="#workers">Workers</a>.
 	</p>
 
-	<hr class="mt-16 mx-4 text-gray-300" />
+	<hr class="hr-common" />
 
-	<HeaderLink
-		classNames="mt-8 text-4xl"
-		headerElement="h2"
-		id="workers"
-		text="Workers" />
+	<HeaderLink headerElement="h2" id="workers" text="Workers" />
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		Unlike most "serveless functions" available from other providers,
-		<ExternalLink
-			classNames="underline hover:text-yellow-700"
-			linkText="Workers"
-			link="https://workers.cloudflare.com/" />
+		<ExternalLink linkText="Workers" link="https://workers.cloudflare.com/" />
 		do not use nodejs. Instead, Cloudflare used v8 Isolates. These are effectively
 		instances of the Chrome JavaScript engine running in the cloud. Because of this,
 		they have extremely low cold start times.
 	</p>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		In fact, the cold start times are so low that Cloudflare managed to make
 		them appear to be 0ms. They did this by starting instance during the SSL
 		handshake.
 	</p>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		By the time the handshake is complete, the instance is already up and ready
 		to receive the request.
 	</p>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		Just like Pages, Workers are globally distributed. Code that runs without
 		accessing an external service or API will respond nearly instanly anywhere
 		in the world.
 	</p>
 
-	<hr class="mt-16 mx-4 text-gray-300" />
+	<hr class="hr-common" />
 
 	<HeaderLink
 		classNames="mt-8 text-4xl"
 		headerElement="h2"
 		id="workers-kv"
-		text="Workers KV" />
-	<p class="mt-8 text-2xl">
+		text="Workers KV"
+	/>
+	<p class="p-common">
 		<ExternalLink
-			classNames="underline hover:text-yellow-700"
 			linkText="Workers KV"
-			link="https://www.cloudflare.com/products/workers-kv/" />
+			link="https://www.cloudflare.com/products/workers-kv/"
+		/>
 		is an extremely low latency, key-value storage service. You put data in and fetch
 		data out.
 	</p>
 
-	<p class="mt-8 text-2xl">It's basically like a schemaless, JSON database.</p>
+	<p class="p-common">It's basically like a schemaless, JSON database.</p>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		As with Pages and Workers, they KV data is globally distributed and
 		accessible at the POP closest to your visitor.
 	</p>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		It's important to note that KV is "eventually consistent". If a user in
 		Chicago triggers a Worker to update a KV, the change will be instantaneous
 		in that POP for all subsequent requests. However, someone in Europe may not
@@ -137,45 +127,53 @@ type CloudflareLink = {
 		completed in less than 60 seconds.
 	</p>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		If you need guaranteed consistency with transaction capability, consider
-		using Cloudflare's <a
-			class="underline hover:text-yellow-700"
-			href="https://developers.cloudflare.com/workers/learning/using-durable-objects"
-			target="_blank"
-			rel="noopener noreferrer">Durable Objects</a> which is still in beta.
+		using Cloudflare's
+
+		<ExternalLink
+			linkText="Durable Objects"
+			link="https://developers.cloudflare.com/workers/learning/using-durable-objects"
+		/>
+		which is still in beta.
 	</p>
 
-	<hr class="mt-16 mx-4 text-gray-300" />
+	<hr class="hr-common" />
 
 	<HeaderLink
-		classNames="mt-8 text-4xl"
 		headerElement="h2"
 		id="cloudflare-ecosystem"
-		text="Cloudflare Ecosystem" />
+		text="Cloudflare Ecosystem"
+	/>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		Cloudflare has a strong developer community around it. There are countless
 		tools to make developing with Cloudflare a breeze. Here are a few examples.
 	</p>
 
 	<!-- This list componenent could be refactored to be more DRY but right
 			now only needs to support 2 levels of nesting. Good enough for now! -->
-	<List listClassNames="mt-4 text-xl" listElement="ul">
+	<List listClassNames="my-6" listElement="ul">
 		{CloudflareLinks.map(({ data, link, text }: CloudflareLink) => {
 			if (data) {
-				return <List listClassNames="mt-4 text-xl" listElement="ul">
+				return (
+					<List listClassNames="my-6" listElement="ul">
 						{data.map(({ link, text }: CloudflareLink) => {
-							return <li class="mt-8 ml-8">
-									<ExternalLink classNames="underline hover:text-yellow-700" linkText={text} link={link} />
-								</li>;
+							return (
+								<li class="li-linked">
+									<ExternalLink linkText={text} link={link} />
+								</li>
+							);
 						})}
-					</List>;
+					</List>
+				);
 			}
 
-			return <li class="mt-8">
-					<ExternalLink classNames="underline hover:text-yellow-700" linkText={text} link={link} />
-				</li>;
+			return (
+				<li class="li-linked">
+					<ExternalLink linkText={text} link={link} />
+				</li>
+			);
 		})}
 	</List>
 </PresentationLayout>

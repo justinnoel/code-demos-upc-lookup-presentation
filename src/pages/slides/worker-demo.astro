@@ -7,20 +7,21 @@ import WorkerNameDemo from "../../components/WorkerNameDemo.astro";
 
 <PresentationLayout>
 	<HeaderLink
-		classNames="mt-8 text-6xl"
+		classNames="h1-common"
 		headerElement="h1"
 		id="/slides/worker-demo"
-		text="Cloudflare Worker Demo" />
-	<p class="mt-8 text-2xl">
+		text="Cloudflare Worker Demo"
+	/>
+	<p class="p-common">
 		The code samples below demonstrates how a Cloudflare Worker can accept HTTP
 		requests, store and retrieve data from KV, and respond to the request.
 	</p>
 
 	<HeaderLink
-		classNames="mt-8 text-4xl"
 		headerElement="h2"
 		id="storing-data-in-kv"
-		text="Storing Data in KV" />
+		text="Storing Data in KV"
+	/>
 	<pre
 		class="mt-8 text-xs ml-8 italic">Presenters Link to Sample On Dashboard: 
 					<ExternalLink
@@ -33,7 +34,7 @@ import WorkerNameDemo from "../../components/WorkerNameDemo.astro";
 		<WorkerNameDemo />
 	</div>
 
-	<p class="mt-8 text-2xl">Please visit this link in your browser:</p>
+	<p class="p-common">Please visit this link in your browser:</p>
 
 	<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
 		<p class="text-lg mb-8">
@@ -43,18 +44,14 @@ import WorkerNameDemo from "../../components/WorkerNameDemo.astro";
 		<pre>https://hello-name-kv-demo.justin-cftemp.workers.dev/greeting/!!!YOUR_NAME_HERE!!!</pre>
 	</div>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		The Cloudflare Worker should respond with a greeting to you.
 	</p>
 
-	<hr class="mt-16 mx-4 text-gray-300" />
+	<hr class="hr-common" />
 
-	<HeaderLink
-		classNames="mt-8 text-4xl"
-		headerElement="h2"
-		id="pages"
-		text="Fetching Data from KV" />
-	<p class="mt-8 text-2xl">Now, visit this link in your browser:</p>
+	<HeaderLink headerElement="h2" id="pages" text="Fetching Data from KV" />
+	<p class="p-common">Now, visit this link in your browser:</p>
 
 	<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
 		<pre>
@@ -65,25 +62,25 @@ import WorkerNameDemo from "../../components/WorkerNameDemo.astro";
 			</pre>
 	</div>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		The Cloudflare Worker should respond with a list of all the visitors that
 		have been received.
 	</p>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		Notice that it may not instantly return the most recent visitors. Again,
 		this is because KV is eventually consistent. In addition, queries from the
 		KV have a 60 second default cache.
 	</p>
 
-	<hr class="mt-16 mx-4 text-gray-300" />
+	<hr class="hr-common" />
 
 	<HeaderLink
-		classNames="mt-8 text-4xl"
 		headerElement="h2"
 		id="accessing-kv-data-wrangler-cli"
-		text="Accessing KV Data with Wrangler CLI" />
-	<p class="mt-8 text-2xl">
+		text="Accessing KV Data with Wrangler CLI"
+	/>
+	<p class="p-common">
 		A developer can view the data stored in KV in the browser (😩) with the KV
 		API or the Wrangler CLI.
 	</p>
@@ -91,10 +88,11 @@ import WorkerNameDemo from "../../components/WorkerNameDemo.astro";
 	<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
 		<code
 			>wrangler kv:key list --namespace-id=240bcf8037a740e6a4320293b8d64329 | jq
-			"."</code>
+			"."</code
+		>
 	</div>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		This data can be piped to a file for further review/backup.
 	</p>
 
@@ -102,14 +100,14 @@ import WorkerNameDemo from "../../components/WorkerNameDemo.astro";
 		<code> ... previous command + " &gt hello_kv_demo_data.json"</code>
 	</div>
 
-	<hr class="mt-16 mx-4 text-gray-300" />
+	<hr class="hr-common" />
 
 	<HeaderLink
-		classNames="mt-8 text-4xl"
 		headerElement="h2"
 		id="deleting-kv-data-wrangler-cli"
-		text="Deleting KV Data with Wrangler CLI" />
-	<p class="mt-8 text-2xl">
+		text="Deleting KV Data with Wrangler CLI"
+	/>
+	<p class="p-common">
 		Deleting data can be done in the browser, one at a time via the CLI or in
 		bulk with a special file of key/value pairs.
 	</p>
@@ -117,6 +115,7 @@ import WorkerNameDemo from "../../components/WorkerNameDemo.astro";
 	<div class="mt-8 text-xl mx-8 bg-gray-100 p-4">
 		<code
 			>wrangler kv:key delete --namespace-id=240bcf8037a740e6a4320293b8d64329
-			"Neil_1636508237650"</code>
+			"Neil_1636508237650"</code
+		>
 	</div>
 </PresentationLayout>

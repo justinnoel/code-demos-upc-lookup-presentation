@@ -15,45 +15,45 @@ type AstroLink = {
 
 <PresentationLayout>
 	<HeaderLink
-		classNames="mt-8 text-6xl"
+		classNames="h1-common"
 		headerElement="h1"
 		id="/slides/astro"
-		text="Astro" />
+		text="Astro"
+	/>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
+		<ExternalLink linkText="Astro" link="https://astro.build" />
+		is one of many
 		<ExternalLink
-			classNames="underline hover:text-yellow-700"
-			linkText="Astro"
-			link="https://astro.build" />
-		is one of many Static Site Generators (SSG) developers can choose from today.
+			linkText="Static Site Generators (SSG)"
+			link="https://serverless.css-tricks.com/services/ssgs/"
+		/>
+
+		developers can choose from today.
 	</p>
 
-	<hr class="mt-16 mx-4 text-gray-300" />
+	<hr class="hr-common" />
 
-	<HeaderLink
-		classNames="mt-8 text-4xl"
-		headerElement="h2"
-		id="concepts"
-		text="Concepts" />
-	<ul class="mt-8 text-xl">
-		<li class="mt-6 ml-6">
-			<p class="text-xl">
+	<HeaderLink headerElement="h2" id="concepts" text="Concepts" />
+	<ul class="my-6">
+		<li class="li-linked">
+			<p class="p-common">
 				Build faster websites with less client-side Javascript
 			</p>
 		</li>
 
-		<li class="mt-6 ml-6">
-			<p class="text-xl">
+		<li class="li-linked">
+			<p class="p-common">
 				<ExternalLink
-					classNames="underline hover:text-yellow-700"
 					linkText="Islands Architecture"
-					link="https://jasonformat.com/islands-architecture/" />
+					link="https://jasonformat.com/islands-architecture/"
+				/>
 			</p>
 		</li>
 	</ul>
 
-	<div class="mt-6 mx-12 text-xl">
-		<q class="italic">
+	<div class="mt-8 mx-12">
+		<q class="p-common italic">
 			The general idea of an “Islands” architecture is deceptively simple:
 			render HTML pages on the server, and inject placeholders or slots around
 			highly dynamic regions. These placeholders/slots contain the
@@ -63,55 +63,42 @@ type AstroLink = {
 		</q>
 	</div>
 
-	<hr class="mt-16 mx-4 text-gray-300" />
+	<hr class="hr-common" />
 
 	<HeaderLink
 		classNames="mt-8 text-4xl"
 		headerElement="h2"
 		id="use-any-javascript-framework"
-		text="Use Any JavaScript or Framework with Built-in TypeScript Support" />
-	<ul class="mt-8 text-xl">
-		<li class="mt-6 ml-6">
-			<p class="text-xl">Vanilla JS - FTW!</p>
-		</li>
+		text="Use Any JavaScript or Framework with Built-in TypeScript Support"
+	/>
+	<ul class="my-6">
+		<li class="li-linked">Vanilla JS - FTW!</li>
 
-		<li class="mt-6 ml-6">
-			<p class="text-xl">React</p>
-		</li>
+		<li class="li-linked">React</li>
 
-		<li class="mt-6 ml-6">
-			<p class="text-xl">Svelte</p>
-		</li>
+		<li class="li-linked">Svelte</li>
 
-		<li class="mt-6 ml-6">
-			<p class="text-xl">Vue</p>
-		</li>
+		<li class="li-linked">Vue</li>
 
-		<li class="mt-6 ml-6">
-			<p class="text-xl">Solid</p>
-		</li>
+		<li class="li-linked">Solid</li>
 	</ul>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		By default, <span class="font-bold">zero</span> developer generated JavaScript
 		is shipped to the client. However, a small loader script will be downloaded for
 		all pages.
 	</p>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		The loader script allows for hydrating client components as needed and only
 		when they are visible using the intersection observer.
 	</p>
 
-	<hr class="mt-16 mx-4 text-gray-300" />
+	<hr class="hr-common" />
 
-	<HeaderLink
-		classNames="mt-8 text-4xl"
-		headerElement="h2"
-		id="astro-ecosystem"
-		text="Astro Ecosystem" />
+	<HeaderLink headerElement="h2" id="astro-ecosystem" text="Astro Ecosystem" />
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		The Astro Discord server is very active with a diverse group of core team
 		and community members. The community has created some great additions to
 		Astro to help make working with Astro even easier. Here are some examples.
@@ -119,21 +106,27 @@ type AstroLink = {
 
 	<!-- This list componenent could be refactored to be more DRY but right
 			now only needs to support 2 levels of nesting. Good enough for now! -->
-	<List listClassNames="mt-4 text-xl" listElement="ul">
+	<List listClassNames="mt-8 text-xl" listElement="ul">
 		{AstroLinks.map(({ data, link, text }: AstroLink) => {
 			if (data) {
-				return <List listClassNames="mt-4 text-xl" listElement="ul">
+				return (
+					<List listClassNames="my-6" listElement="ul">
 						{data.map(({ link, text }: AstroLink) => {
-							return <li class="mt-8 ml-8">
-									<ExternalLink classNames="underline hover:text-yellow-700" linkText={text} link={link} />
-								</li>;
+							return (
+								<li class="li-linked">
+									<ExternalLink linkText={text} link={link} />
+								</li>
+							);
 						})}
-					</List>;
+					</List>
+				);
 			}
 
-			return <li class="mt-8">
-					<ExternalLink classNames="underline hover:text-yellow-700" linkText={text} link={link} />
-				</li>;
+			return (
+				<li class="li-linked">
+					<ExternalLink linkText={text} link={link} />
+				</li>
+			);
 		})}
 	</List>
 </PresentationLayout>

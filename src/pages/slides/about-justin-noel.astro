@@ -26,68 +26,112 @@ const skills = [
 	"Good 'ol HTML/CSS/JS",
 	"Astro",
 	"Cloudflare",
+	"A dozen other technologies that are fading away like my memory ...",
+];
+
+const jobNeeds = [
+	'Need a short-term <span class="not-sr-only">⏳</span> contract developer to knock out <span class="not-sr-only">🥊</span> features or punch out bugs <span class="not-sr-only">🥑</span>🐜',
+	'Need a part-time developer advocate <span class="not-sr-only">🥑</span>',
+	"Have some heavy ETL to do",
+	"Could use a customer/developer relations engineer",
+	"Need some technical customer support help",
+	'Want to throw buckets <span class="not-sr-only">🪣</span> of money <span		class="not-sr-only">💰</span	> at me to speak about your amazing <span class="not-sr-only">😍</span> product	at the hottest tech conference',
+	'Or ... just want to pay me to continue playing with new tech <span		class="not-sr-only">😉</span	>',
 ];
 ---
 
 <PresentationLayout>
 	<HeaderLink
-		classNames="mt-8 text-4xl"
+		classNames="h1-common"
+		headerElement="h1"
+		id="/slides/about-justin-noel"
+		text="About Justin Noel"
+	/>
+	<p class="p-common">
+		The code samples below demonstrates how a Cloudflare Worker can accept HTTP
+		requests, store and retrieve data from KV, and respond to the request.
+	</p>
+
+	<HeaderLink
 		headerElement="h2"
 		id="about-justin-noel"
-		text="Cheesy 🧀 Bio Alert!" />
+		text="Cheesy 🧀 Bio Alert!"
+	/>
 
-	<p class="mt-4 text-2xl">
+	<p class="p-common">
 		In 2013, I left my boring enterprise developer position in the telecom ☎
 		industry to jump into the exciting world of mobile app 📱 development.
 	</p>
 
-	<p class="mt-4 text-2xl">
+	<p class="p-common">
 		Sadly, my own personal apps haven't made me rich <span class="not-sr-only"
 			>😢</span
 		>. To make ends meet, I've been an occasional contract mobile app developer
-		and worked for a major e-commerce company. Together with some great teams,
-		I've built mobile apps for several Fortune 100 companies.
+		and worked for a major e-commerce company.
 	</p>
 
-	<p class="mt-4 text-2xl">
+	<p class="p-common">
+		Together with some great teams, I've built mobile apps for several Fortune
+		100 companies.
+	</p>
+
+	<p class="p-common">
 		Now, I'm happily <span class="not-sr-only">😊</span> un(der)-employed and just
 		enjoying dabbling with lots of new tech 👨‍💻.
 	</p>
 
-	<hr class="mt-16 mx-4 text-gray-300" />
+	<hr class="hr-common" />
 
 	<HeaderLink
-		classNames="mt-8 text-4xl"
 		headerElement="h2"
 		id="available-for-hire"
-		text="Sorta Kinda Looking for Work" />
-	<p class="mt-4 text-2xl">
-		If you need a short-term contract developer, a part-time developer advocate <span
-			class="not-sr-only">🥑</span
-		>, have some heavy ETL to do, need some customer support help, or even want
-		to throw buckets <span class="not-sr-only">🪣</span> of money <span
-			class="not-sr-only">💰</span> at me to speak about your amazing <span
-			class="not-sr-only">😍</span> product at the hottest tech conference, please
-		reach out to me.
-	</p>
+		text="Sorta Kinda, Not Really Looking for Work"
+	/>
 
-	<h3 class="mt-12 text-3xl">Skills</h3>
+	<p class="p-common">Please reach out to me if you:</p>
+
 	<ul class="my-6">
-		{skills.map((skill) => <li class="mt-6 ml-6">
-				<p class="text-xl">{skill}</p>
-			</li>)}
+		{jobNeeds.map((job) => <li class="li-linked">{job}</li>)}
 	</ul>
 
-	<hr class="mt-16 mx-4 text-gray-300" />
+	<p class="p-common">
+		Right now, I'm really focused on my health and looking for opportunities
+		that are exactly what I want instead of "almost".
+	</p>
 
-	<h2 class="mt-12 text-4xl">Social Links</h2>
+	<p class="p-common">
+		Short term opportunities are most likely to fit that bill right now.
+		However, if the right job were to land in my lamp, I'd be pretty happy with
+		that too.
+	</p>
+
+	<HeaderLink headerElement="h2" id="justin-noel-software-skills" text="Skills"
+	/>
+	<ul class="my-6">
+		{skills.map((skill) => <li class="li-linked">{skill}</li>)}
+	</ul>
+
+	<hr class="hr-common" />
+
+	<HeaderLink
+		headerElement="h2"
+		id="justin-noel-social-links"
+		text="Social Links"
+	/>
 
 	<ul class="my-6">
-		{socialLinks.map((social) => <li class="mt-6 ml-6">
-				<a href={social.link} target="_blank" rel="noopener noreferrer" class="flex underline hover:text-yellow-700">
+		{socialLinks.map((social) => (
+			<li class="li-linked">
+				<a
+					href={social.link}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex underline hover:text-yellow-700"
+				>
 					<img src={social.icon} alt="" height="24" class="max-h-8 block" />
 					<p class="text-xl ml-8">{social.text}</p>
 				</a>
-			</li>)}
+			</li>
+		))}
 	</ul>
 </PresentationLayout>

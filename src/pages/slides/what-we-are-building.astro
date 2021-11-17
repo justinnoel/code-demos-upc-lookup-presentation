@@ -1,44 +1,50 @@
 ---
 import PresentationLayout from "../../layouts/Presentation.astro";
+import ExternalLink from "../../components/ExternalLink.astro";
 import HeaderLink from "../../components/HeaderLink.astro";
 ---
 
 <PresentationLayout>
 	<HeaderLink
-		classNames="mt-8 text-6xl"
+		classNames="h1-common"
 		headerElement="h1"
 		id="/slides/what-we-are-building"
-		text="What We're Building" />
+		text="What We're Building"
+	/>
 
-	<p class="mt-8 text-2xl">
+	<p class="p-common">
 		Today we're going to build a simple (fake) UPC lookup service. The user will
 		enter a UPC barcode value to get information about the grocery product they
 		have scanned.
 	</p>
 
-	<p class="mt-8 text-2xl">
-		This presentation is based on a <a
-			class="underline hover:text-yellow-700"
-			href="https://community-garden-kitchen-barcodes.pages.dev/"
-			target="_blank"
-			rel="noopener noreferrer">real UPC lookup service</a> I created for the
-		<a
-			class="underline hover:text-yellow-700"
-			href="https://communitygardenkitchen.org/"
-			target="_blank"
-			rel="noopener noreferrer">Community Garden Kitchen of McKinney</a
-		>.
+	<HeaderLink
+		headerElement="h2"
+		id="community-garden-kitchen-upc-lookup-service"
+		text="UPC Lookup Service"
+	/>
+	<p class="p-common">
+		This presentation is based on a
+		<ExternalLink
+			linkText="real UPC lookup service"
+			link="https://community-garden-kitchen-barcodes.pages.dev/"
+		/>
+		I created for the
+		<ExternalLink
+			linkText="Community Garden Kitchen of McKinney"
+			link="https://communitygardenkitchen.org/"
+		/>
+		.
 	</p>
 
-	<p class="mt-8 text-2xl">
-		If you'd be so kind as to make a <a
-			class="underline hover:text-yellow-700"
-			href="https://communitygardenkitchen.org/support/donate/"
-			target="_blank"
-			rel="noopener noreferrer">donation</a
-		>, I would really appreciate it. Your support will help to build and run a
-		free restaurant that serves the needs of my community. Anyone in need of a
-		meal or some compassionate company will be able to come in and get the
-		support they need.
+	<p class="p-common">
+		If you'd be so kind as to make a
+		<ExternalLink
+			linkText="donation"
+			link="https://communitygardenkitchen.org/support/donate/"
+		/>
+		, I would really appreciate it. Your support will help to build and run a free
+		restaurant that serves the needs of my community. Anyone in need of a meal or
+		some compassionate company will be able to come in and get the support they need.
 	</p>
 </PresentationLayout>

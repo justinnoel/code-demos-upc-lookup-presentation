@@ -5,3 +5,19 @@
 .full-minus-nav {
 	min-height: calc(100vh - 4rem);
 }
+
+.p-common {
+	@apply mt-8 text-2xl sm:text-3xl text-gray-600;
+}
+
+.h1-common {
+	@apply mt-8 text-5xl sm:text-6xl text-gray-900;
+}
+
+.hr-common {
+	@apply mt-16 mx-4 text-gray-300;
+}
+
+.li-linked {
+	@apply mt-8 text-xl sm:text-2xl text-gray-600 ml-8;
+}

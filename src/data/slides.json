@@ -37,8 +37,8 @@
 	},
 	{
 		"id": 5,
-		"title": "Convert Project to Astro",
-		"previewText": "Convert a plain HTML project into an Astro project",
-		"linkText": "astro-create-project"
+		"title": "Develop Site Using Astro",
+		"previewText": "Convert a plain HTML project into an Astro site",
+		"linkText": "develop-astro-site"
 	}
 ]

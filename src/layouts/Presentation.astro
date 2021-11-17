@@ -30,7 +30,7 @@ const { nextSlide, previousSlide } = Astro.props as Props;
 		<link rel="stylesheet" href={Astro.resolve("../assets/global.css")} />
 	</head>
 
-	<body class="mx-auto max-w-6xl text-gray-700 h-full">
+	<body class="mx-auto max-w-6xl text-gray-700 h-full pb-32 tracking-wide">
 		<Navigation {nextSlide} {previousSlide} />
 		<main class="px-8 full-minus-nav">
 			<slot />

@@ -1,0 +1,126 @@
+---
+import PresentationLayout from "../../layouts/Presentation.astro";
+import ExternalLink from "../../components/ExternalLink.astro";
+import HeaderLink from "../../components/HeaderLink.astro";
+---
+
+<PresentationLayout>
+	<HeaderLink
+		classNames="h1-common"
+		headerElement="h1"
+		id="/slides/develop-astro-site"
+		text="Develop An Astro Powered Site"
+	/>
+	<p class="p-common">
+		Our project starts with a simple HTML page that has been pushed to Github.
+		We'll step through converting it into an Astro project.
+	</p>
+
+	<HeaderLink
+		headerElement="h2"
+		id="start-as-html"
+		text="Start with a Bare Bones HTML Page"
+	/>
+
+	<p class="p-common">
+		A Cloudflare Pages project has been created on for this Github repo. Now,
+		every time any branch in this repo gets modified, Cloudflare will rebuild
+		it.
+	</p>
+
+	<p class="p-common">
+		Changes to the "main" branch will be published to the "production" URL.
+	</p>
+
+	<p class="p-common">Original Version Links</p>
+
+	<div class="p-common mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			linkText="Github (main branch)"
+			link="https://github.com/justinnoel/code-demos-upc-lookup-front-end/tree/main"
+		/>
+	</div>
+
+	<div class="p-common mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			linkText="https://upc-lookup-frontend.codedemos.dev"
+			link="https://upc-lookup-frontend.codedemos.dev"
+		/>
+	</div>
+
+	<hr class="hr-common" />
+
+	<HeaderLink
+		headerElement="h2"
+		id="convert-to-astro"
+		text="Convert the Project to Astro"
+	/>
+	<div class="p-common mx-8 bg-gray-100 p-4">
+		<div>
+			<code>npm init astro --template framework-preact</code>
+		</div>
+		<div>
+			<code>yarn</code>
+		</div>
+		<div>
+			<code>yarn dev</code>
+		</div>
+	</div>
+
+	<p class="p-common">
+		<span class="font-bold">NOTE:</span> I've modified it just slightly for this
+		presentation
+	</p>
+
+	<p class="p-common">
+		Changes to any branch other than "main" will be published to a unique
+		preview URL.
+	</p>
+
+	<p class="p-common">Astro-ized Version Links</p>
+
+	<div class="p-common mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			linkText="Github ( feat/add-astro-to-project branch)"
+			link="https://github.com/justinnoel/code-demos-upc-lookup-front-end/tree/feat/add-astro-to-project"
+		/>
+	</div>
+
+	<div class="p-common mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			linkText="https://344d59a7.code-demos-upc-lookup-front-end.pages.dev"
+			link="https://344d59a7.code-demos-upc-lookup-front-end.pages.dev"
+		/>
+	</div>
+
+	<hr class="hr-common" />
+
+	<HeaderLink
+		headerElement="h2"
+		id="add-upc-lookup-interface"
+		text="Add the UPC Lookup Interface"
+	/>
+
+	<p class="p-common">
+		I've thrown a really quick UI into the code to demonstrate how Astro can
+		handle all the typical React(Preact) type functions, hooks, etc.
+	</p>
+
+	<p class="p-common">I'm no designer - sue me!</p>
+
+	<p class="p-common">UPC Looking Links</p>
+
+	<div class="p-common mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			linkText="Github ( feat/add-upc-lookup-ui branch)"
+			link="https://github.com/justinnoel/code-demos-upc-lookup-front-end/tree/feat/add-upc-lookup-ui"
+		/>
+	</div>
+
+	<div class="p-common mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			linkText="https://dd734c2f.code-demos-upc-lookup-front-end.pages.dev/"
+			link="https://dd734c2f.code-demos-upc-lookup-front-end.pages.dev/"
+		/>
+	</div>
+</PresentationLayout>

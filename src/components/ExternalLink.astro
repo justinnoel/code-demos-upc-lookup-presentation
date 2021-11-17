@@ -1,11 +1,15 @@
 ---
 export interface Props {
-	classNames: string;
+	classNames?: string;
 	link: string;
 	linkText: string;
 }
 
-const { classNames, link, linkText } = Astro.props as Props;
+const {
+	classNames = "underline hover:text-yellow-700",
+	link,
+	linkText,
+} = Astro.props as Props;
 ---
 
 <a class={classNames} href={link} target="_blank" rel="noopener noreferrer">

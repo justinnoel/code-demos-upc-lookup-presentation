@@ -4,10 +4,13 @@ const { title, previewText, linkText } = slide;
 ---
 
 <article class="mt-8">
-	<h3 class="text-2xl text-gray-700 underline ">
+	<h2 class="mt-8 text-3xl sm:text-4xl text-gray-800 underline">
 		<a href={`/slides/${linkText}`} class="hover:text-yellow-700">{title}</a>
-	</h3>
-	<p class="pl-4 sm:pl-8 my-2 text-xl">{previewText}</p>
-	<a href={`/slides/${linkText}`} class="pl-4 sm:pl-8 text-yellow-700"
-		>Read more</a>
+	</h2>
+	<p class="p-common pl-4 sm:pl-8">{previewText}</p>
+	<a
+		href={`/slides/${linkText}`}
+		class="mt-4 text-xl sm:text-2xl pl-4 sm:pl-8 text-yellow-700 block"
+		>Read more</a
+	>
 </article>
