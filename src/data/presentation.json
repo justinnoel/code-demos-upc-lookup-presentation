@@ -50,13 +50,13 @@
 			"link": "cloudflare"
 		},
 		{
-			"id": 4,
+			"id": 5,
 			"title": "Worker Demo",
 			"description": "Create a simple worker that responds to requests by returning the name of the current visitor or the names of all previous visitors.",
 			"link": "worker-demo"
 		},
 		{
-			"id": 5,
+			"id": 6,
 			"title": "Develop Site Using Astro",
 			"description": "Convert a plain HTML project into an Astro site",
 			"link": "develop-astro-site"

@@ -7,11 +7,6 @@ const { nextSlide, previousSlide, slideIndex } = getPrevNext(url.pathname);
 const previousClass = previousSlide ? "visible" : "hidden";
 const nextClass = nextSlide ? "visible" : "invisible";
 const homeClass = slideIndex === null ? "invisible" : "visible";
-console.log(
-	`Navigation url='${url}'. NextSlide link = ${
-		nextSlide ? nextSlide.link : "none"
-	}`,
-);
 ---
 
 <header class="px-8 py-4">

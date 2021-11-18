@@ -3,7 +3,7 @@ import Presentation from "./data/presentation.json";
 const { slides } = Presentation;
 
 export function findSlideIndex(pathName: string) {
-	const slideLink = pathName.replace("/slides/", "");
+	const slideLink = pathName.replace("/slides/", "").replace(/\//g, "");
 	return slides.findIndex((slide) => slide.link === slideLink);
 }
 
