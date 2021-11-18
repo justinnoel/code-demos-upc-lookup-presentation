@@ -1,6 +1,7 @@
 ---
-import PresentationLayout from "../../layouts/Presentation.astro";
+import ExternalLink from "../../components/ExternalLink.astro";
 
+import PresentationLayout from "../../layouts/Presentation.astro";
 import SlidePreview from "../../components/SlidePreview.astro";
 import Presentation from "../../data/presentation.json";
 
@@ -11,6 +12,33 @@ finalSlides.shift();
 
 <PresentationLayout>
 	<h1 class="mt-8 text-6xl">Presentation Overview</h1>
+
+	<hr class="hr-common" />
+
+	<p class="p-common">
+		<span class="font-bold">NOTE:</span> This presentation was part of a demonstration
+		of Astro and Cloudflare hosted by
+
+		<ExternalLink linkText="Michael Chan" link="https://twitter.com/chantastic/"
+		/>
+
+		on his
+
+		<ExternalLink
+			linkText="Twitch channel 'lunchdev'"
+			link="https://www.twitch.tv/videos/1201611075"
+		/>
+
+		. You can also view the
+
+		<ExternalLink
+			linkText="presentation on YouTube"
+			link="https://www.youtube.com/watch?v=bFLGoUJXboU"
+		/>
+		.
+	</p>
+
+	<hr class="hr-common" />
 
 	<article aria-label="Presentation slides list">
 		{finalSlides.map((slide) => <SlidePreview slide={slide} />)}
