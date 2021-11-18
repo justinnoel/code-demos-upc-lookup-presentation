@@ -22,35 +22,37 @@ export function getPrevNext(pathName: string) {
 }
 
 export function getSeoProps(pathName: string) {
+	const openGraph = {
+		...Presentation.splashScreen.openGraph,
+		basic: {
+			...Presentation.splashScreen.openGraph.basic,
+			image: `${Presentation.canonical}${Presentation.splashScreen.openGraph.basic.image}`,
+			type: "website",
+			url: Presentation.canonical,
+		},
+	};
+
 	if (pathName === "/") {
 		return {
 			title: Presentation.splashScreen.title,
 			description: Presentation.splashScreen.description,
 			canonical: Presentation.canonical,
-			openGraph: {
-				basic: {
-					image: `${Presentation.canonical}${Presentation.splashScreen.openGraph.basic.image}`,
-					title: Presentation.splashScreen.openGraph.basic.title,
-					type: "website",
-					url: Presentation.canonical,
-				},
-				image: {
-					alt: Presentation.splashScreen.openGraph.image.alt,
-				},
-			},
+			openGraph,
 		};
 	}
 
 	const slideIndex = findSlideIndex(pathName);
 	const slide = slides[slideIndex] || {
-		title: "",
 		description: "",
 		link: "",
+		openGraph,
+		title: "",
 	};
 
 	return {
 		canonical: `${Presentation.canonical}${slide.link}`,
 		description: slide.description,
+		openGraph,
 		title: slide.title,
 	};
 }
