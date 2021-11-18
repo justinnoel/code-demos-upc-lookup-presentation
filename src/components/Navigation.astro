@@ -12,7 +12,7 @@ const homeClass = slideIndex === null ? "invisible" : "visible";
 <header class="px-8 py-4">
 	<nav class="flex justify-between text-2xl">
 		<a
-			href={`/slides/${previousSlide?.linkText}`}
+			href={`/slides/${previousSlide?.link}`}
 			class={` text-gray-700 hover:text-yellow-700 ${previousClass}`}
 		>
 			&lt; Prev
@@ -21,7 +21,7 @@ const homeClass = slideIndex === null ? "invisible" : "visible";
 			>Home</a
 		>
 		<a
-			href={`/slides/${nextSlide?.linkText}`}
+			href={`/slides/${nextSlide?.link}`}
 			class={` text-gray-700 hover:text-yellow-700 ${nextClass}`}
 		>
 			Next &gt;

@@ -1,15 +1,15 @@
 ---
 const { slide } = Astro.props;
-const { title, previewText, linkText } = slide;
+const { title, description, link } = slide;
 ---
 
 <article class="mt-8">
 	<h2 class="mt-8 text-3xl sm:text-4xl text-gray-800 underline">
-		<a href={`/slides/${linkText}`} class="hover:text-yellow-700">{title}</a>
+		<a href={`/slides/${link}`} class="hover:text-yellow-700">{title}</a>
 	</h2>
-	<p class="p-common pl-4 sm:pl-8">{previewText}</p>
+	<p class="p-common pl-4 sm:pl-8">{description}</p>
 	<a
-		href={`/slides/${linkText}`}
+		href={`/slides/${link}`}
 		class="mt-4 text-xl sm:text-2xl pl-4 sm:pl-8 text-yellow-700 block"
 		>Read more</a
 	>

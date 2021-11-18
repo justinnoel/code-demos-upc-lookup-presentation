@@ -1,0 +1,58 @@
+{
+	"canonical": "https://upc-lookup-presentation.codedemos.dev/",
+	"splashScreen": {
+		"description": "How to use Astro static site generator and Cloudflare to develop fast, responsive, and powerful websites and apps.",
+		"openGraph": {
+			"basic": {
+				"image": "assets/img/astro-cloudflare-presentation-twitter-og.jpg",
+				"title": "Astro Plus Cloudflare Give You Developer Super Powers",
+				"type": "website"
+			}
+		},
+		"title": "Astro & Cloudflare"
+	},
+	"slides": [
+		{
+			"id": 0,
+			"title": "Overview",
+			"description": "Overview of presentation on Astro and Cloudflare",
+			"link": "overview"
+		},
+		{
+			"id": 1,
+			"title": "About Justin Noel",
+			"description": "Who is this Justin Noel guy?",
+			"link": "about-justin-noel"
+		},
+		{
+			"id": 2,
+			"title": "What We're Going To Build",
+			"description": "Today, we'll demonstrate building a simple UPC lookup service that will be based off a real service created for the Community Garden Kitchen of McKinney, TX.",
+			"link": "what-we-are-building"
+		},
+		{
+			"id": 3,
+			"title": "Astro",
+			"description": "Astro is a static site generator (SSG) that generates the HTML, JavaScript, and CSS.",
+			"link": "astro"
+		},
+		{
+			"id": 4,
+			"title": "Cloudflare",
+			"description": "Cloudflare also has a suite of tools for enterprises and developers to build robust, automatically scaled, and low cost \"serverless\" applications.",
+			"link": "cloudflare"
+		},
+		{
+			"id": 4,
+			"title": "Worker Demo",
+			"description": "Create a simple worker that responds to requests by returning the name of the current visitor or the names of all previous visitors.",
+			"link": "worker-demo"
+		},
+		{
+			"id": 5,
+			"title": "Develop Site Using Astro",
+			"description": "Convert a plain HTML project into an Astro site",
+			"link": "develop-astro-site"
+		}
+	]
+}

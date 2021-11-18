@@ -3,34 +3,24 @@
 import { SEO } from "astro-seo";
 import { ComponentChildren } from "preact";
 
+import { getSeoProps } from "../utils.js";
 import Navigation from "../components/Navigation.astro";
+
+const url = new URL(Astro.request.url);
+const seoInfo = getSeoProps(url.pathname);
 
 export interface Props {
 	children: ComponentChildren;
-	seo: {
-		canonical: string;
-		description: string;
-		title: string;
-		openGraph: {
-			basic?: {
-				image: string;
-				title: string;
-				type: string;
-				url: string;
-			};
-		};
-	};
 }
-
-const { seo } = Astro.props as Props;
 ---
 
 <html lang="en">
 	<head>
 		<SEO
-			canonical={seo.canonical}
-			description={seo.description}
-			openGraph={seo.openGraph}
+			title={seoInfo.title}
+			canonical={seoInfo.canonical}
+			description={seoInfo.description}
+			openGraph={seoInfo.openGraph}
 		/>
 		<meta charSet="utf-8" />
 		<meta name="viewport" content="width=device-width" />
