@@ -3,26 +3,34 @@
 import { SEO } from "astro-seo";
 import { ComponentChildren } from "preact";
 
-// import { SlideType } from "../types/presentation";
-
 import Navigation from "../components/Navigation.astro";
 
 export interface Props {
-	// nextSlide?: SlideType;
-	// previousSlide?: SlideType;
-	nextSlide?: any;
-	previousSlide?: any;
 	children: ComponentChildren;
+	seo: {
+		canonical: string;
+		description: string;
+		title: string;
+		openGraph: {
+			basic?: {
+				image: string;
+				title: string;
+				type: string;
+				url: string;
+			};
+		};
+	};
 }
 
-const { nextSlide, previousSlide } = Astro.props as Props;
+const { seo } = Astro.props as Props;
 ---
 
 <html lang="en">
 	<head>
 		<SEO
-			title="A Very Descriptive Title"
-			description="A heavily optimized description full of well-researched keywords."
+			canonical={seo.canonical}
+			description={seo.description}
+			openGraph={seo.openGraph}
 		/>
 		<meta charSet="utf-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -31,7 +39,7 @@ const { nextSlide, previousSlide } = Astro.props as Props;
 	</head>
 
 	<body class="mx-auto max-w-6xl text-gray-700 h-full pb-32 tracking-wide">
-		<Navigation {nextSlide} {previousSlide} />
+		<Navigation />
 		<main class="px-8 full-minus-nav">
 			<slot />
 		</main>
