@@ -34,6 +34,9 @@ export function getSeoProps(pathName: string) {
 					type: "website",
 					url: Presentation.canonical,
 				},
+				image: {
+					alt: Presentation.splashScreen.openGraph.image.alt,
+				},
 			},
 		};
 	}
