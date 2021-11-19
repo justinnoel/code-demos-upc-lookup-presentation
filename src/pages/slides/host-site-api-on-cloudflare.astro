@@ -1,0 +1,129 @@
+---
+import PresentationLayout from "../../layouts/Presentation.astro";
+import ExternalLink from "../../components/ExternalLink.astro";
+import HeaderLink from "../../components/HeaderLink.astro";
+---
+
+<PresentationLayout>
+	<HeaderLink
+		classNames="h1-common"
+		headerElement="h1"
+		id="/slides/host-site-api-on-cloudflare"
+		text="Host the Site & API On Cloudflare"
+	/>
+	<p class="p-common">
+		Now that we've got an Astro generated site, we need to serve it to the world <span
+			class="not-sr-only">🌏</span
+		>! We'll use Cloudflare Pages as our "server" and Workers as the API.
+	</p>
+
+	<hr class="hr-common" />
+
+	<p class="p-common">
+		<span class="font-bold">NOTE:</span> Cloudflare has declared the week of November
+		14 to 21, 2021
+
+		<ExternalLink
+			linkText="&quot;Full Stack Week&quot;"
+			link="https://www.cloudflare.com/full-stack-week/"
+		/>
+
+		and has been pushing out an amazing list of new features and functionality.
+	</p>
+
+	<p class="p-common">
+		Much of this presentation is not out of date (but not obsolete). <span
+			class="line-through">Once</span
+		> if <span class="not-sr-only">🤔</span> the dust settles, I'll add more branches
+		to discuss and demonstrate how the UPC Lookup service can take advantage of the
+		new features.
+	</p>
+
+	<img
+		class="mt-12 mx-auto"
+		height="256"
+		src="https://imagedelivery.net/gYH1rtFm77lFoan6sS-XFg/a190a1a1-ce06-47e5-6093-37233d201000/public1024wide"
+		alt="Screenshot of tweet where @JustinNoelDev says 'Frickin' @CloudflareDev They move so fast I can't even finish my presentation on their LAST set of awesome features before they ship MORE! Now, I've got to update it again!'"
+	/>
+
+	<hr class="hr-common" />
+
+	<HeaderLink
+		headerElement="h2"
+		id="cloudflare-pages"
+		text="Pages Hosts the Site"
+	/>
+
+	<p class="p-common">
+		Since Pages was configured to monitor the repo on Github, as soon as any
+		changes were made to the "main" or feature branches, Cloudflare generated
+		the production site and preview URLs.
+	</p>
+
+	<p class="p-common">Original Version on "main"</p>
+
+	<div class="p-common mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			linkText="https://upc-lookup-frontend.codedemos.dev"
+			link="https://upc-lookup-frontend.codedemos.dev"
+		/>
+	</div>
+
+	<p class="p-common">Astro-ized Version</p>
+
+	<div class="p-common mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			linkText="https://344d59a7.code-demos-upc-lookup-front-end.pages.dev"
+			link="https://344d59a7.code-demos-upc-lookup-front-end.pages.dev"
+		/>
+	</div>
+
+	<p class="p-common">Final UPC Lookup App</p>
+
+	<div class="p-common mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			linkText="https://dd734c2f.code-demos-upc-lookup-front-end.pages.dev/"
+			link="https://dd734c2f.code-demos-upc-lookup-front-end.pages.dev/"
+		/>
+	</div>
+
+	<hr class="hr-common" />
+
+	<HeaderLink
+		headerElement="h2"
+		id="cloudflare-workers-api"
+		text="Workers as an API"
+	/>
+
+	<p class="p-common">
+		Cloudflare Workers acts as the API for the UPC Lookup app. As requests for
+		UPC codes are received, it will query the very tiny UPC database (all 2
+		records) and respond with the product information. The only UPC codes stored
+		are:
+	</p>
+
+	<ul class="my-6">
+		<li class="li-linked mx-8 bg-gray-100 p-4">
+			<ExternalLink
+				linkText="021130520015"
+				link="https://upc-lookup-api.codedemos.dev/api/upc/021130520015"
+			/>
+		</li>
+
+		<li class="li-linked mx-8 bg-gray-100 p-4">
+			<ExternalLink
+				linkText="085239098790"
+				link="https://upc-lookup-api.codedemos.dev/api/upc/085239098790"
+			/>
+		</li>
+	</ul>
+
+	<p class="p-common">UPC Lookup Service API Source Code</p>
+
+	<div class="p-common mx-8 bg-gray-100 p-4">
+		<ExternalLink
+			linkText="Github (code-demos-upc-lookup-api)"
+			link="https://github.com/justinnoel/code-demos-upc-lookup-api"
+		/>
+	</div>
+</PresentationLayout>

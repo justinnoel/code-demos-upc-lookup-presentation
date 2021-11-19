@@ -60,6 +60,12 @@
 			"title": "Develop Site Using Astro",
 			"description": "Convert a plain HTML project into an Astro site",
 			"link": "develop-astro-site"
+		},
+		{
+			"id": 7,
+			"title": "Host the Site & API On Cloudflare",
+			"description": "We've got a simple API and static site running locally now. How do we share it with the world? With Cloudflare of course!",
+			"link": "host-site-api-on-cloudflare"
 		}
 	]
 }
