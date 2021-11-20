@@ -25,6 +25,10 @@ export interface Props {
 		/>
 		<meta charSet="utf-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="script-src 'self' https://scripts.simpleanalyticscdn.com; connect-src 'self' https://queue.simpleanalyticscdn.com; img-src 'self' https://queue.simpleanalyticscdn.com;"
+		/>
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link rel="stylesheet" href={Astro.resolve("../assets/global.css")} />
 	</head>
