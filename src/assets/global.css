@@ -11,7 +11,7 @@
 }
 
 .h1-common {
-	@apply mt-8 text-5xl sm:text-6xl text-gray-900;
+	@apply mt-8 text-3xl sm:text-4xl sm:text-gray-800 md:text-gray-700 font-bold text-center;
 }
 
 .hr-common {
