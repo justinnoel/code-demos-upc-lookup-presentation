@@ -4,6 +4,11 @@ import HeaderLink from "../../components/HeaderLink.astro";
 
 const socialLinks = [
 	{
+		link: "https://justinnoel.dev",
+		text: "Blog - JustinNoel.dev",
+		icon: "/assets/img/blog.svg",
+	},
+	{
 		link: "https://twitter.com/JustinNoelDev",
 		text: "@JustinNoelDev",
 		icon: "/assets/img/twitter.svg",
@@ -12,11 +17,6 @@ const socialLinks = [
 		link: "https://github.com/justinnoel",
 		text: "JustinNoel",
 		icon: "/assets/img/github.svg",
-	},
-	{
-		link: "https://justinnoel.dev",
-		text: "JustinNoel.dev",
-		icon: "/assets/img/blog.svg",
 	},
 ];
 
@@ -80,6 +80,30 @@ const jobNeeds = [
 
 	<HeaderLink
 		headerElement="h2"
+		id="justin-noel-social-links"
+		text="Social Links"
+	/>
+
+	<ul class="my-6">
+		{socialLinks.map((social) => (
+			<li class="li-linked">
+				<a
+					href={social.link}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex underline hover:text-yellow-700"
+				>
+					<img src={social.icon} alt="" height="24" class="max-h-8 block" />
+					<p class="text-xl ml-8">{social.text}</p>
+				</a>
+			</li>
+		))}
+	</ul>
+
+	<hr class="hr-common" />
+
+	<HeaderLink
+		headerElement="h2"
 		id="available-for-hire"
 		text="Sorta Kinda, Not Really Looking for Work"
 	/>
@@ -105,29 +129,5 @@ const jobNeeds = [
 	/>
 	<ul class="my-6">
 		{skills.map((skill) => <li class="li-linked">{skill}</li>)}
-	</ul>
-
-	<hr class="hr-common" />
-
-	<HeaderLink
-		headerElement="h2"
-		id="justin-noel-social-links"
-		text="Social Links"
-	/>
-
-	<ul class="my-6">
-		{socialLinks.map((social) => (
-			<li class="li-linked">
-				<a
-					href={social.link}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="flex underline hover:text-yellow-700"
-				>
-					<img src={social.icon} alt="" height="24" class="max-h-8 block" />
-					<p class="text-xl ml-8">{social.text}</p>
-				</a>
-			</li>
-		))}
 	</ul>
 </PresentationLayout>
